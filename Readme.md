@@ -29,7 +29,7 @@ I'm a software developer who is passionate about creating technology to elevate 
 
   ![](./henry.svg)
 
-⚡ From [Mauricio776](https://github.com/Mauricio776)
+⚡ From [HX-mluquez](https://github.com/HX-mluquez)
   
 <!--
 **Mauricio776/Mauricio776** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

@@ -11,7 +11,6 @@ Please feel free to clone projects and raise issues if you think something could
   <h1 align="center">Hi I'm Mauricio Gastón 👋</h1>
 <p align="center">
   <a href="https://dreamy-bell-73e7eb.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-%2B-green?style=flat&logo=twitter&logoColor=white"/></a>
-    <a href="https://twitter.com/LuquezMauricio"><img src="https://img.shields.io/badge/twitter-%231FA1F1?style=flat&logo=twitter&logoColor=white"/></a>
     <a href="https://www.linkedin.com/in/mauricio-gast%C3%B3n-l%C3%BAquez-aaa78571/"><img src="https://img.shields.io/badge/linkedin-%230177B5?style=flat&logo=linkedin&logoColor=white"/></a>
     <a href="https://www.youtube.com/watch?v=swOoG0nbBaA"><img src="https://img.shields.io/badge/youtube-%23FF0000?style=flat&logo=youtube&logoColor=white"/></a>
     <a href="https://www.npmjs.com/~mauricio776101"><img src="https://img.shields.io/badge/npm-js-brightgreen"/></a>

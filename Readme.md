@@ -14,7 +14,7 @@ Please feel free to clone projects and raise issues if you think something could
     <a href="https://twitter.com/LuquezMauricio"><img src="https://img.shields.io/badge/twitter-%231FA1F1?style=flat&logo=twitter&logoColor=white"/></a>
     <a href="https://www.linkedin.com/in/mauricio-gast%C3%B3n-l%C3%BAquez-aaa78571/"><img src="https://img.shields.io/badge/linkedin-%230177B5?style=flat&logo=linkedin&logoColor=white"/></a>
     <a href="https://www.youtube.com/watch?v=swOoG0nbBaA"><img src="https://img.shields.io/badge/youtube-%23FF0000?style=flat&logo=youtube&logoColor=white"/></a>
-    <a href="https://www.instagram.com/luquezmarquez/"><img src="https://img.shields.io/badge/instagram-%23E4415F?style=flat&logo=instagram&logoColor=white"/></a>
+    <a href="https://www.npmjs.com/~mauricio776101"><img src="https://img.shields.io/badge/npm-js-brightgreen"/></a>
   </p>
    
   <img src="https://user-images.githubusercontent.com/80530309/149434382-85e45f80-e8b2-4c23-a9ab-51d9ce046b70.gif"/>

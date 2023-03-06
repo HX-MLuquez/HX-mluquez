@@ -1,33 +1,3 @@
-¡Hola, soy Mauricio Gastón Lúquez!
-<img src="https://media.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif" width="200">
-Soy un apasionado desarrollador de software, amante de la tecnología y la innovación. Me dedico a crear soluciones tecnológicas que mejoren la vida de las personas y de las empresas.
-
-🚀 Mis habilidades
-Desarrollo de software
-Machine Learning
-Inteligencia Artificial
-Análisis de datos
-Diseño de experiencias de usuario
-💻 Mis proyectos
-Algunos de los proyectos en los que he trabajado:
-
-Proyecto 1: Un proyecto increíblemente innovador que cambió la forma en que las personas interactúan con la tecnología.
-Proyecto 2: Una solución tecnológica de vanguardia que revolucionó el mundo de los negocios.
-Proyecto 3: Una aplicación móvil que ha sido descargada por millones de usuarios en todo el mundo.
-📫 Cómo contactarme
-Puedes contactarme a través de LinkedIn en el siguiente enlace: https://www.linkedin.com/in/mauricio-gast%C3%B3n-l%C3%BAquez-aaa78571/.
-
-También puedes seguirme en GitHub en el siguiente enlace: https://github.com/HX-mluquez.
-
-Si estás interesado en alguno de mis proyectos, no dudes en contactarme.
-
-📦 NPM
-Además, también puedes encontrar algunos de mis paquetes en NPM en el siguiente enlace: https://www.npmjs.com/~mauricio776101.
-
-¡Gracias por visitar mi perfil! Espero poder colaborar contigo en algún proyecto interesante en el futuro.
-
-
-<!--
 <div align="center" width="50">
 
 </div>
@@ -58,7 +28,7 @@ I'm a software developer who is passionate about creating technology to elevate 
   ![](./henry.svg)
 
 ⚡ From [HX-mluquez](https://github.com/HX-mluquez)
-  -->
+  
 <!--
 **Mauricio776/Mauricio776** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

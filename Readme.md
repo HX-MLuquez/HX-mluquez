@@ -7,7 +7,7 @@ Please feel free to clone projects and raise issues if you think something could
 
 <div align="center">
 
-  <h1 align="center">Hi I'm Mauricio Gastón 👋</h1>
+  <h1 align="center">Hi I'm Mauricio Gastón Lúquez 👋</h1>
 <p align="center">
   <a href="https://dreamy-bell-73e7eb.netlify.app/"><img src="https://img.shields.io/badge/Portfolio-%2B-green?style=flat&logo=twitter&logoColor=white"/></a>
     <a href="https://www.linkedin.com/in/mauricio-gast%C3%B3n-l%C3%BAquez-aaa78571/"><img src="https://img.shields.io/badge/linkedin-%230177B5?style=flat&logo=linkedin&logoColor=white"/></a>

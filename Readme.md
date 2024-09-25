@@ -16,7 +16,7 @@ Please feel free to clone projects and raise issues if you think something could
   </p>
    
   <img src="https://user-images.githubusercontent.com/80530309/149434382-85e45f80-e8b2-4c23-a9ab-51d9ce046b70.gif"/>
-  <img src="https://github.com/user-attachments/assets/b93215e4-01df-4cc2-895f-86743d6be5d9" />
+
 I'm a software developer who is passionate about creating technology to elevate people and help new developers to find the right path. Some technologies I enjoy working with include Javascript, React, Redux, Node JS, Express, Sequelize and Postgres
 SQL, intermediate knowledge in: Python and PHP; and a basic knowledge of: GO, React Native, MySQL and MongoDB. I am passionate about AI and the analysis of complex data structures. Am
 committed, I am passionate about programming and I have created complex codes, I developed a small

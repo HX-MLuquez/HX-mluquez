@@ -1,5 +1,5 @@
-<div align="center" width="50">
-
+<div align="center" width="50" background-color="white">
+<h1>SOY en principio un html</h1>
 </div>
 
 You have finally discovered my Github profile. <br>

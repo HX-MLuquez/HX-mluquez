@@ -1,4 +1,4 @@
-<div align="center" width="50" background-color="white">
+<div align="center" width="50" style="background-color=white" >
 <h1>SOY en principio un html</h1>
 </div>
 

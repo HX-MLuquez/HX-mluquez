@@ -97,6 +97,6 @@
   <!-- Text animations -->
   <text id="text1" x="150" y="180">Mauricio G. Lúquez</text>
   <text id="text2" x="150" y="230">Desarrollador FullStack</text>
-  <text id="text3" x="150" y="280">_____________</text>
+  <text id="text3" x="150" y="280"></text>
 </svg>
 

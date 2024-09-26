@@ -1,35 +1,59 @@
 <svg version="1.1"
-     baseProfile="full" 
+     baseProfile="full"
      width="300" height="200"
      xmlns="http://www.w3.org/2000/svg">
-     <style>
-@keyframes bounce {
-  0%   { transform: scale(1,    1)   translateY(0)     skew(0deg,  0deg); }
-  3%   { transform: scale(1,    1)   translateY(0)     skew(0deg,  0deg); }
-  5%   { transform: scale(1.1,  .9)  translateY(5px)   skew(0deg,  0deg); }
-  12%  { transform: scale(.9,   1.1) translateY(-70px) skew(25deg, 5deg); }
-  13%  { transform: scale(.9,   1.1) translateY(-70px) skew(25deg, 5deg); }
-  20%  { transform: scale(1.05, .95) translateY(0)     skew(0deg,  0deg); }
-  22%  { transform: scale(1,    1)   translateY(-7px)  skew(0deg,  0deg); }
-  27%  { transform: scale(1,    1)   translateY(0)     skew(0deg,  0deg); }
-  100% { transform: scale(1,    1)   translateY(0)     skew(0deg,  0deg); }
-}
-text {
-  width: 120px;
-  line-height: 20px;
-  padding-top: 70px;
-  text-align: center;
-  font: 400 16px/1.5 Helvetica ,Arial ,sans-serif;
-  color: rgb(52, 73, 94);
-  transform-origin: bottom;
-  animation: 4s cubic-bezier(.5, 0, .5, 1.2) 1s infinite bounce;
-}
-</style>
+  <style>
+    @keyframes bounce1 {
+      0%   { transform: translateY(0); }
+      20%  { transform: translateY(-30px); }
+      40%  { transform: translateY(15px); }
+      60%  { transform: translateY(-15px); }
+      80%  { transform: translateY(5px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes bounce2 {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(10px); }
+      50%  { transform: translateX(-10px); }
+      75%  { transform: translateX(5px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes bounce3 {
+      0%   { transform: scale(1); }
+      20%  { transform: scale(1.2); }
+      50%  { transform: scale(0.8); }
+      80%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    text {
+      font: 400 24px Helvetica, Arial, sans-serif;
+      text-anchor: middle;
+      fill: white;
+    }
+
+    #text1 {
+      animation: bounce1 4s ease-in-out infinite;
+    }
+
+    #text2 {
+      animation: bounce2 4s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    #text3 {
+      animation: bounce3 4s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+  </style>
 
   <rect width="100%" height="100%" fill="yellow" />
-
   <circle cx="150" cy="100" r="80" fill="black" />
 
-  <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">soy Henry</text>
-
+  <text id="text1" x="150" y="85">Mauricio</text>
+  <text id="text2" x="150" y="125">Gastón</text>
+  <text id="text3" x="150" y="165">Lúquez</text>
 </svg>
+

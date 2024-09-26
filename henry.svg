@@ -1,26 +1,43 @@
 <svg version="1.1"
      baseProfile="full"
-     width="300" height="200"
+     width="500" height="400"
      xmlns="http://www.w3.org/2000/svg">
   <style>
-    @keyframes bounce1 {
+    @keyframes backgroundMove {
+      0%   { fill: #f39c12; }
+      50%  { fill: #8e44ad; }
+      100% { fill: #f39c12; }
+    }
+
+    @keyframes circleMove {
+      0%   { transform: translateX(0); }
+      50%  { transform: translateX(50px) scale(1.1); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes lineMove {
+      0%   { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 200; }
+    }
+
+    @keyframes textBounce1 {
       0%   { transform: translateY(0); }
-      20%  { transform: translateY(-30px); }
-      40%  { transform: translateY(15px); }
-      60%  { transform: translateY(-15px); }
+      20%  { transform: translateY(-20px); }
+      40%  { transform: translateY(10px); }
+      60%  { transform: translateY(-10px); }
       80%  { transform: translateY(5px); }
       100% { transform: translateY(0); }
     }
 
-    @keyframes bounce2 {
+    @keyframes textBounce2 {
       0%   { transform: translateX(0); }
-      25%  { transform: translateX(10px); }
-      50%  { transform: translateX(-10px); }
-      75%  { transform: translateX(5px); }
+      25%  { transform: translateX(20px); }
+      50%  { transform: translateX(-20px); }
+      75%  { transform: translateX(10px); }
       100% { transform: translateX(0); }
     }
 
-    @keyframes bounce3 {
+    @keyframes textBounce3 {
       0%   { transform: scale(1); }
       20%  { transform: scale(1.2); }
       50%  { transform: scale(0.8); }
@@ -28,32 +45,58 @@
       100% { transform: scale(1); }
     }
 
+    rect {
+      animation: backgroundMove 6s infinite alternate;
+    }
+
+    circle {
+      transform-origin: center;
+      animation: circleMove 6s ease-in-out infinite;
+      fill: #3498db;
+    }
+
+    line {
+      stroke-dasharray: 200;
+      stroke-width: 2;
+      stroke: white;
+      animation: lineMove 4s linear infinite;
+    }
+
     text {
-      font: 400 24px Helvetica, Arial, sans-serif;
+      font: 400 28px Helvetica, Arial, sans-serif;
       text-anchor: middle;
       fill: white;
     }
 
     #text1 {
-      animation: bounce1 4s ease-in-out infinite;
+      animation: textBounce1 5s ease-in-out infinite;
     }
 
     #text2 {
-      animation: bounce2 4s ease-in-out infinite;
+      animation: textBounce2 5s ease-in-out infinite;
       animation-delay: 0.5s;
     }
 
     #text3 {
-      animation: bounce3 4s ease-in-out infinite;
+      animation: textBounce3 5s ease-in-out infinite;
       animation-delay: 1s;
     }
   </style>
 
-  <rect width="100%" height="100%" fill="yellow" />
-  <circle cx="150" cy="100" r="80" fill="black" />
+  <!-- Background rectangle with changing color -->
+  <rect width="100%" height="100%" />
 
-  <text id="text1" x="150" y="85">Mauricio</text>
-  <text id="text2" x="150" y="125">Gastón</text>
-  <text id="text3" x="150" y="165">Lúquez</text>
+  <!-- Moving circle -->
+  <circle cx="150" cy="200" r="80" />
+
+  <!-- Animated diagonal lines -->
+  <line x1="50" y1="0" x2="300" y2="400" />
+  <line x1="450" y1="0" x2="200" y2="400" />
+  <line x1="0" y1="50" x2="500" y2="350" />
+
+  <!-- Text animations -->
+  <text id="text1" x="150" y="180">Mauricio</text>
+  <text id="text2" x="150" y="230">Gastón</text>
+  <text id="text3" x="150" y="280">Lúquez</text>
 </svg>
 

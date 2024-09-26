@@ -4,99 +4,81 @@
      xmlns="http://www.w3.org/2000/svg">
   <style>
     @keyframes backgroundMove {
-      0%   { fill: #f39c12; }
-      50%  { fill: #8e44ad; }
-      100% { fill: #f39c12; }
+      0%   { fill: #ff9f43; }
+      50%  { fill: #e74c3c; }
+      100% { fill: #ff9f43; }
     }
 
-    @keyframes circleMove {
-      0%   { transform: translateX(0); }
-      50%  { transform: translateX(50px) scale(1.1); }
-      100% { transform: translateX(0); }
+    @keyframes circle3D {
+      0%   { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
+      50%  { transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg); }
+      100% { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
     }
 
-    @keyframes lineMove {
-      0%   { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -400; }
+    @keyframes text3D1 {
+      0%   { transform: scale(1) translateZ(0px); }
+      50%  { transform: scale(1.2) translateZ(50px); }
+      100% { transform: scale(1) translateZ(0px); }
     }
 
-    @keyframes textBounce1 {
-      0%   { transform: translateY(0); }
-      20%  { transform: translateY(-20px); }
-      40%  { transform: translateY(10px); }
-      60%  { transform: translateY(-10px); }
-      80%  { transform: translateY(5px); }
-      100% { transform: translateY(0); }
+    @keyframes text3D2 {
+      0%   { transform: scale(1) translateY(0px) rotateY(0deg); }
+      50%  { transform: scale(1.3) translateY(-10px) rotateY(180deg); }
+      100% { transform: scale(1) translateY(0px) rotateY(0deg); }
     }
 
-    @keyframes textBounce2 {
-      0%   { transform: translateX(0); }
-      25%  { transform: translateX(20px); }
-      50%  { transform: translateX(-20px); }
-      75%  { transform: translateX(10px); }
-      100% { transform: translateX(0); }
-    }
-
-    @keyframes textBounce3 {
-      0%   { transform: scale(1); }
-      20%  { transform: scale(1.2); }
-      50%  { transform: scale(0.8); }
-      80%  { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    @keyframes text4D {
+      0%   { transform: scale(1) perspective(300px) rotateX(0deg); }
+      50%  { transform: scale(1.3) perspective(300px) rotateX(360deg); }
+      100% { transform: scale(1) perspective(300px) rotateX(0deg); }
     }
 
     rect {
-      animation: backgroundMove 6s infinite alternate;
+      animation: backgroundMove 8s infinite alternate;
     }
 
     circle {
-      transform-origin: center;
-      animation: circleMove 6s ease-in-out infinite;
       fill: #3498db;
-    }
-
-    line {
-      stroke-dasharray: 400;
-      stroke-width: 3;
-      stroke: white;
-      animation: lineMove 5s linear infinite;
+      transform-origin: center;
+      animation: circle3D 6s ease-in-out infinite;
     }
 
     text {
-      font: 400 28px Helvetica, Arial, sans-serif;
+      font: 400 30px Helvetica, Arial, sans-serif;
       text-anchor: middle;
       fill: white;
+      transform-style: preserve-3d;
+      transform-origin: center;
     }
 
     #text1 {
-      animation: textBounce1 5s ease-in-out infinite;
+      animation: text3D1 6s ease-in-out infinite;
+      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     }
 
     #text2 {
-      animation: textBounce2 5s ease-in-out infinite;
-      animation-delay: 0.5s;
+      animation: text3D2 5s ease-in-out infinite;
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
     }
 
     #text3 {
-      animation: textBounce3 5s ease-in-out infinite;
-      animation-delay: 1s;
+      animation: text4D 8s ease-in-out infinite;
+      text-shadow: 7px 7px 15px rgba(0, 0, 0, 0.7);
     }
+
   </style>
 
-  <!-- Background rectangle with changing color -->
+  <!-- Background rectangle with color animation -->
   <rect width="100%" height="100%" />
 
-  <!-- Moving circle -->
-  <circle cx="150" cy="200" r="80" />
+  <!-- Moving 3D circle -->
+  <circle cx="50%" cy="50%" r="100" />
 
-  <!-- Animated diagonal lines -->
-  <line x1="50" y1="0" x2="300" y2="400" />
-  <line x1="450" y1="0" x2="200" y2="400" />
-  <line x1="0" y1="50" x2="500" y2="350" />
+  <!-- Animated 3D text -->
+  <text id="text1" x="50%" y="45%">Mauricio Gastón Lúquez</text>
+  <text id="text2" x="50%" y="55%">Desarrollador FullStack</text>
+  <text id="text3" x="50%" y="65%"></text>
 
-  <!-- Text animations -->
-  <text id="text1" x="150" y="180">Mauricio G. Lúquez</text>
-  <text id="text2" x="150" y="230">Desarrollador FullStack</text>
-  <text id="text3" x="150" y="280"></text>
 </svg>
+
 

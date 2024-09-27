@@ -4,7 +4,14 @@
      xmlns="http://www.w3.org/2000/svg">
 
   <style>
-    /* Animación de mover Pacman por el laberinto */
+    /* Fondo animado */
+    @keyframes backgroundMove {
+      0%   { fill: #2ecc71; }
+      50%  { fill: #3498db; }
+      100% { fill: #2ecc71; }
+    }
+
+    /* Movimiento de Pacman por el laberinto */
     @keyframes movePacman {
       0%   { transform: translate(20px, 20px); }
       25%  { transform: translate(420px, 20px); }
@@ -13,20 +20,26 @@
       100% { transform: translate(20px, 20px); }
     }
 
-    /* Movimiento de abrir y cerrar la boca */
+    /* Animación de la boca de Pacman */
     @keyframes chew {
-      0%, 100% { d: path('M50 50 L50 20 A30 30 0 1 1 80 50 Z'); } /* Boca abierta */
-      50% { d: path('M50 50 L50 50 A30 30 0 1 1 80 50 Z'); } /* Boca cerrada */
+      0%, 100% { d: path('M50 50 A30 30 0 1 1 80 50 L50 50 Z'); } /* Boca abierta */
+      50% { d: path('M50 50 A30 30 0 1 1 80 50 L50 30 Z'); } /* Boca cerrada */
     }
 
-    /* Estilo de Pacman */
+    /* Pacman */
     .pacman {
       fill: #f1c40f;
-      animation: movePacman 8s linear infinite, chew 0.3s infinite;
+      animation: movePacman 8s linear infinite;
       transform-origin: center;
     }
 
-    /* Estilo del ojo de Pacman */
+    /* Movimiento de la boca */
+    .mouth {
+      fill: #2ecc71;
+      animation: chew 0.5s infinite;
+    }
+
+    /* Ojo de Pacman */
     .eye {
       fill: black;
       cx: 60px;
@@ -34,14 +47,37 @@
       r: 5px;
     }
 
-    /* Estilo del laberinto */
+    /* Pared del laberinto */
     .wall {
       fill: none;
-      stroke: #3498db;
+      stroke: #34495e;
       stroke-width: 10;
     }
 
+    /* Texto que Pacman va comiendo */
+    text {
+      font: 400 30px Helvetica, Arial, sans-serif;
+      text-anchor: middle;
+      fill: white;
+      transform-style: preserve-3d;
+      transform-origin: center;
+      animation: moveText 8s linear infinite;
+    }
+
+    /* Posiciones de las palabras */
+    #text1 { transform: translate(100px, 100px); }
+    #text2 { transform: translate(400px, 100px); }
+    #text3 { transform: translate(400px, 400px); }
+    #text4 { transform: translate(100px, 400px); }
+
+    /* Fondo del SVG animado */
+    rect {
+      animation: backgroundMove 5s infinite;
+    }
   </style>
+
+  <!-- Fondo con animación de color -->
+  <rect width="100%" height="100%" />
 
   <!-- Laberinto simple -->
   <rect x="10" y="10" width="480" height="480" class="wall" />
@@ -50,14 +86,23 @@
   <rect x="10" y="370" width="120" height="120" class="wall" />
   <rect x="370" y="10" width="120" height="120" class="wall" />
 
-  <!-- Pacman con movimiento -->
+  <!-- Pacman con su boca animada -->
   <g class="pacman" transform="translate(20, 20)">
-    <!-- Pacman con boca animada -->
-    <path d="M50 50 L50 20 A30 30 0 1 1 80 50 Z" />
+    <!-- Círculo de Pacman -->
+    <circle cx="50" cy="50" r="30" />
+    <!-- Boca en forma de porción triangular -->
+    <path class="mouth" d="M50 50 A30 30 0 1 1 80 50 L50 50 Z" />
     <!-- Ojo de Pacman -->
     <circle class="eye" />
   </g>
-  
+
+  <!-- Textos animados que Pacman va comiendo -->
+  <text id="text1" x="100" y="100">Mauricio</text>
+  <text id="text2" x="400" y="100">Gastón</text>
+  <text id="text3" x="400" y="400">Lúquez</text>
+  <text id="text4" x="100" y="400">Dev</text>
+
 </svg>
+
 
 

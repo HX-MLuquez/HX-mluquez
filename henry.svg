@@ -4,80 +4,28 @@
      xmlns="http://www.w3.org/2000/svg">
 
   <style>
-    /* Fondo animado */
-    @keyframes backgroundMove {
-      0%   { fill: #2ecc71; }
-      50%  { fill: #3498db; }
-      100% { fill: #2ecc71; }
-    }
-
     /* Animación de la boca de Pacman */
     @keyframes chew {
-      0%, 100% { d: path('M50 50 A30 30 0 1 1 80 50 L50 50 Z'); } /* Boca abierta */
-      50% { d: path('M50 50 A30 30 0 1 1 80 50 L50 70 Z'); } /* Boca cerrada */
-    }
-
-    /* Movimiento de Pacman por el laberinto */
-    @keyframes movePacman {
-      0%   { transform: translate(20px, 20px); }
-      25%  { transform: translate(420px, 20px); }
-      50%  { transform: translate(420px, 420px); }
-      75%  { transform: translate(20px, 420px); }
-      100% { transform: translate(20px, 20px); }
+      0%, 100% { d: path('M250 250 A100 100 0 1 1 350 250 L250 250 Z'); } /* Boca abierta */
+      50% { d: path('M250 250 A100 100 0 1 1 350 250 L250 350 Z'); } /* Boca cerrada */
     }
 
     /* Estilos de Pacman */
     .pacman {
       fill: #f1c40f; /* Amarillo para Pacman */
-      animation: movePacman 8s linear infinite;
+      animation: chew 0.5s ease-in-out infinite; /* Animación de la boca */
       transform-origin: center;
-    }
-
-    /* Ojo de Pacman */
-    .eye {
-      fill: black;
-      cx: 60px;
-      cy: 35px;
-      r: 5px;
-    }
-
-    /* Textos que Pacman va comiendo */
-    text {
-      font: 400 30px Helvetica, Arial, sans-serif;
-      text-anchor: middle;
-      fill: white;
-    }
-
-    /* Posiciones de las palabras */
-    #text1 { transform: translate(100px, 100px); }
-    #text2 { transform: translate(400px, 100px); }
-    #text3 { transform: translate(400px, 400px); }
-    #text4 { transform: translate(100px, 400px); }
-
-    /* Fondo del SVG animado */
-    rect {
-      animation: backgroundMove 5s infinite;
     }
   </style>
 
-  <!-- Fondo con animación de color -->
-  <rect width="100%" height="100%" />
-
-  <!-- Pacman con su boca animada -->
-  <g class="pacman" transform="translate(20, 20)">
+  <!-- Pacman en el centro con su boca animada -->
+  <g class="pacman" transform="translate(0, 0)">
     <!-- Boca de Pacman -->
-    <path d="M50 50 A30 30 0 1 1 80 50 L50 50 Z" />
-    <!-- Ojo de Pacman -->
-    <circle class="eye" cx="60" cy="35" r="5" />
+    <path d="M250 250 A100 100 0 1 1 350 250 L250 250 Z" />
   </g>
 
-  <!-- Textos animados que Pacman va comiendo -->
-  <text id="text1" x="100" y="100">Mauricio</text>
-  <text id="text2" x="400" y="100">Gastón</text>
-  <text id="text3" x="400" y="400">Lúquez</text>
-  <text id="text4" x="100" y="400">Dev</text>
-
 </svg>
+
 
 
 

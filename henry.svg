@@ -9,9 +9,38 @@
     }
     .paddle {
       fill: #e74c3c;
+      animation: paddle-move 3s linear infinite alternate;
     }
     .ball {
       fill: #f1c40f;
+      animation: ball-move 2s linear infinite;
+    }
+
+    @keyframes paddle-move {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(700px);
+      }
+    }
+
+    @keyframes ball-move {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(700px, -200px);
+      }
+      50% {
+        transform: translate(700px, 0);
+      }
+      75% {
+        transform: translate(0, -200px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
     }
   </style>
 

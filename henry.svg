@@ -85,7 +85,7 @@
   </g>
 
   <!-- Textos animados que Pacman va comiendo -->
-  <text id="text1" x="100" y="100">Mauricio</text>
+  <text id="text1" x="100" y="100">Mauricioooo</text>
   <text id="text2" x="400" y="100">Gastón</text>
   <text id="text3" x="400" y="400">Lúquez</text>
   <text id="text4" x="100" y="400">Dev</text>

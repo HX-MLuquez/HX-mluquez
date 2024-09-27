@@ -11,6 +11,12 @@
       100% { fill: #2ecc71; }
     }
 
+    /* Animación de la boca de Pacman */
+    @keyframes chew {
+      0%, 100% { d: path('M50 50 A30 30 0 1 1 80 50 L50 50 Z'); } /* Boca abierta */
+      50% { d: path('M50 50 A30 30 0 1 1 80 50 L50 70 Z'); } /* Boca cerrada */
+    }
+
     /* Movimiento de Pacman por el laberinto */
     @keyframes movePacman {
       0%   { transform: translate(20px, 20px); }
@@ -20,20 +26,13 @@
       100% { transform: translate(20px, 20px); }
     }
 
-    /* Animación de la boca de Pacman */
-    @keyframes chew {
-      0%, 100% { d: path('M50 50 A30 30 0 1 1 80 50 L50 50 Z'); } /* Boca abierta */
-      50% { d: path('M50 50 A30 30 0 1 1 80 50 L50 30 Z'); } /* Boca cerrada */
-    }
-
-    /* Pacman */
+    /* Estilos de Pacman */
     .pacman {
       fill: #f1c40f;
       animation: movePacman 8s linear infinite;
       transform-origin: center;
     }
 
-    /* Movimiento de la boca */
     .mouth {
       fill: #2ecc71;
       animation: chew 0.5s infinite;
@@ -50,18 +49,14 @@
     /* Pared del laberinto */
     .wall {
       fill: none;
-      stroke: #34495e;
-      stroke-width: 10;
+      stroke: none; /* Sin líneas visibles para el fondo */
     }
 
-    /* Texto que Pacman va comiendo */
+    /* Textos que Pacman va comiendo */
     text {
       font: 400 30px Helvetica, Arial, sans-serif;
       text-anchor: middle;
       fill: white;
-      transform-style: preserve-3d;
-      transform-origin: center;
-      animation: moveText 8s linear infinite;
     }
 
     /* Posiciones de las palabras */
@@ -79,16 +74,9 @@
   <!-- Fondo con animación de color -->
   <rect width="100%" height="100%" />
 
-  <!-- Laberinto simple -->
-  <rect x="10" y="10" width="480" height="480" class="wall" />
-  <rect x="10" y="10" width="120" height="120" class="wall" />
-  <rect x="370" y="370" width="120" height="120" class="wall" />
-  <rect x="10" y="370" width="120" height="120" class="wall" />
-  <rect x="370" y="10" width="120" height="120" class="wall" />
-
   <!-- Pacman con su boca animada -->
   <g class="pacman" transform="translate(20, 20)">
-    <!-- Círculo de Pacman -->
+    <!-- Cuerpo de Pacman -->
     <circle cx="50" cy="50" r="30" />
     <!-- Boca en forma de porción triangular -->
     <path class="mouth" d="M50 50 A30 30 0 1 1 80 50 L50 50 Z" />

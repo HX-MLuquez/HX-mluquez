@@ -1,135 +1,43 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arkanoid en SVG</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #222;
-        }
-        svg {
-            border: 1px solid #000;
-            background-color: #eee;
-        }
-        .paddle {
-            fill: #3498db;
-        }
-        .ball {
-            fill: #e74c3c;
-        }
-        .block {
-            fill: #f1c40f;
-        }
-        #score {
-            fill: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-    </style>
-</head>
-<body>
-    <svg id="game" width="800" height="600">
-        <rect class="paddle" x="350" y="550" width="100" height="20"></rect>
-        <circle class="ball" cx="400" cy="500" r="10"></circle>
-        <text id="score" x="10" y="20">Puntos: 0</text>
-        <!-- Bloques -->
-        <g id="blocks"></g>
-    </svg>
-    
-    <script>
-        const paddle = document.querySelector('.paddle');
-        const ball = document.querySelector('.ball');
-        const scoreText = document.getElementById('score');
-        const blocksGroup = document.getElementById('blocks');
-        const svg = document.getElementById('game');
-        let ballDX = 2, ballDY = -2;
-        let score = 0;
+<svg version="1.1" width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .block {
+      fill: #3498db;
+      transition: fill 0.3s;
+    }
+    .block:hover {
+      fill: #2980b9;
+    }
+    .paddle {
+      fill: #e74c3c;
+    }
+    .ball {
+      fill: #f1c40f;
+    }
+  </style>
 
-        // Crear bloques
-        function createBlocks() {
-            const blockWidth = 75;
-            const blockHeight = 20;
-            const rows = 5;
-            const cols = 10;
-            for (let r = 0; r < rows; r++) {
-                for (let c = 0; c < cols; c++) {
-                    const block = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                    block.setAttribute('class', 'block');
-                    block.setAttribute('x', c * (blockWidth + 5) + 25);
-                    block.setAttribute('y', r * (blockHeight + 5) + 30);
-                    block.setAttribute('width', blockWidth);
-                    block.setAttribute('height', blockHeight);
-                    blocksGroup.appendChild(block);
-                }
-            }
-        }
+  <!-- Fondo del juego -->
+  <rect width="100%" height="100%" fill="#222" />
 
-        // Mover la paleta
-        function movePaddle(event) {
-            const rect = svg.getBoundingClientRect();
-            const mouseX = event.clientX - rect.left;
-            paddle.setAttribute('x', Math.min(Math.max(mouseX - 50, 0), 800 - 100));
-        }
+  <!-- Bloques -->
+  <g id="blocks">
+    <rect class="block" x="50" y="50" width="75" height="20"></rect>
+    <rect class="block" x="150" y="50" width="75" height="20"></rect>
+    <rect class="block" x="250" y="50" width="75" height="20"></rect>
+    <rect class="block" x="350" y="50" width="75" height="20"></rect>
+    <rect class="block" x="450" y="50" width="75" height="20"></rect>
+    <rect class="block" x="550" y="50" width="75" height="20"></rect>
+    <rect class="block" x="650" y="50" width="75" height="20"></rect>
+  </g>
 
-        // Actualizar el estado del juego
-        function update() {
-            // Mover la bola
-            let ballX = parseFloat(ball.getAttribute('cx')) + ballDX;
-            let ballY = parseFloat(ball.getAttribute('cy')) + ballDY;
+  <!-- Paleta -->
+  <rect class="paddle" x="350" y="550" width="100" height="20"></rect>
 
-            // Colisión con las paredes
-            if (ballX < 10 || ballX > 790) {
-                ballDX = -ballDX; // Cambiar dirección
-            }
-            if (ballY < 10) {
-                ballDY = -ballDY; // Cambiar dirección
-            } else if (ballY > 590) {
-                alert('Juego terminado. Puntuación: ' + score);
-                location.reload(); // Reiniciar el juego
-            }
+  <!-- Bola -->
+  <circle class="ball" cx="400" cy="500" r="10"></circle>
 
-            // Colisión con la paleta
-            if (ballY > 530 && ballY < 550 && ballX > parseFloat(paddle.getAttribute('x')) && ballX < parseFloat(paddle.getAttribute('x')) + 100) {
-                ballDY = -ballDY; // Cambiar dirección
-                score += 10; // Incrementar puntuación
-                scoreText.textContent = 'Puntos: ' + score;
-            }
-
-            // Colisión con bloques
-            const blocks = document.querySelectorAll('.block');
-            blocks.forEach(block => {
-                if (block) {
-                    const blockX = parseFloat(block.getAttribute('x'));
-                    const blockY = parseFloat(block.getAttribute('y'));
-                    const blockWidth = parseFloat(block.getAttribute('width'));
-                    const blockHeight = parseFloat(block.getAttribute('height'));
-
-                    if (ballX > blockX && ballX < blockX + blockWidth && ballY > blockY && ballY < blockY + blockHeight) {
-                        ballDY = -ballDY; // Cambiar dirección
-                        block.remove(); // Eliminar bloque
-                        score += 20; // Incrementar puntuación
-                        scoreText.textContent = 'Puntos: ' + score;
-                    }
-                }
-            });
-
-            ball.setAttribute('cx', ballX);
-            ball.setAttribute('cy', ballY);
-            requestAnimationFrame(update);
-        }
-
-        document.addEventListener('mousemove', movePaddle);
-        createBlocks(); // Crear bloques al iniciar
-        update(); // Iniciar actualización del juego
-    </script>
-</body>
-</html>
+  <!-- Texto de puntuación -->
+  <text x="10" y="20" fill="white" font-family="Arial" font-size="16">Puntos: 0</text>
+</svg>
 
 
 

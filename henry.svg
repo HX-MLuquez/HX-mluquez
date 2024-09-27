@@ -3,82 +3,86 @@
      width="500" height="400"
      xmlns="http://www.w3.org/2000/svg">
   <style>
+    /* Animación de fondo de colores */
     @keyframes backgroundMove {
       0%   { fill: #ff9f43; }
       50%  { fill: #e74c3c; }
       100% { fill: #ff9f43; }
     }
 
-    @keyframes circle3D {
-      0%   { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
-      50%  { transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg); }
-      100% { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
+    /* Animación de movimiento del Pacman */
+    @keyframes movePacman {
+      0%   { transform: translateX(-100px); }
+      100% { transform: translateX(600px); }
     }
 
-    @keyframes text3D1 {
-      0%   { transform: scale(1) translateZ(0px); }
-      50%  { transform: scale(1.2) translateZ(50px); }
-      100% { transform: scale(1) translateZ(0px); }
-    }
-
-    @keyframes text3D2 {
-      0%   { transform: scale(1) translateY(0px) rotateY(0deg); }
-      50%  { transform: scale(1.3) translateY(-10px) rotateY(180deg); }
-      100% { transform: scale(1) translateY(0px) rotateY(0deg); }
-    }
-
-    @keyframes text4D {
-      0%   { transform: scale(1) perspective(300px) rotateX(0deg); }
-      50%  { transform: scale(1.3) perspective(300px) rotateX(360deg); }
-      100% { transform: scale(1) perspective(300px) rotateX(0deg); }
-    }
-
+    /* Estilo del rectángulo de fondo */
     rect {
       animation: backgroundMove 8s infinite alternate;
     }
 
-    circle {
-      fill: #3498db;
-      transform-origin: center;
-      animation: circle3D 6s ease-in-out infinite;
+    /* Estilo del Pacman */
+    .pacman {
+      fill: #f1c40f;
+      animation: movePacman 4s linear infinite;
     }
 
+    /* Movimiento de abrir y cerrar boca */
+    @keyframes chew {
+      0%, 100% { d: path('M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 1,0 -60,0'); }
+      50% { d: path('M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 0,1 -60,0'); }
+    }
+
+    /* Estilo del círculo Pacman */
+    path {
+      animation: chew 0.3s infinite;
+    }
+
+    /* Estilos para el texto */
     text {
       font: 400 30px Helvetica, Arial, sans-serif;
       text-anchor: middle;
       fill: white;
       transform-style: preserve-3d;
       transform-origin: center;
+      opacity: 1;
+      animation: fadeText 4s linear infinite;
     }
 
+    /* Animación para ocultar texto cuando Pacman pasa por él */
+    @keyframes fadeText {
+      0%   { opacity: 1; }
+      30%  { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Configurar cada texto con delay distinto para simular que Pacman se los "come" */
     #text1 {
-      animation: text3D1 6s ease-in-out infinite;
-      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      animation-delay: 0.5s;
     }
 
     #text2 {
-      animation: text3D2 5s ease-in-out infinite;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+      animation-delay: 1.5s;
     }
 
     #text3 {
-      animation: text4D 8s ease-in-out infinite;
-      text-shadow: 7px 7px 15px rgba(0, 0, 0, 0.7);
+      animation-delay: 2.5s;
     }
 
   </style>
 
-  <!-- Background rectangle with color animation -->
+  <!-- Fondo animado -->
   <rect width="100%" height="100%" />
 
-  <!-- Moving 3D circle -->
-  <circle cx="50%" cy="50%" r="100" />
+  <!-- Pacman -->
+  <g class="pacman" transform="translate(-100,150)">
+    <path d="M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 1,0 -60,0" />
+  </g>
 
-  <!-- Animated 3D text -->
+  <!-- Textos animados -->
   <text id="text1" x="50%" y="45%">Mauricio Gastón Lúquez</text>
   <text id="text2" x="50%" y="55%">Desarrollador FullStack</text>
-  <text id="text3" x="50%" y="65%"></text>
+  <text id="text3" x="50%" y="65%">Pacman en acción</text>
 
 </svg>
-
 

@@ -1,90 +1,135 @@
-<svg version="1.1"
-     baseProfile="full"
-     width="500" height="500"
-     xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @keyframes backgroundMove {
-      0%   { fill: #ff9f43; }
-      50%  { fill: #e74c3c; }
-      100% { fill: #ff9f43; }
-    }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkanoid en SVG</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+        }
+        svg {
+            border: 1px solid #000;
+            background-color: #eee;
+        }
+        .paddle {
+            fill: #3498db;
+        }
+        .ball {
+            fill: #e74c3c;
+        }
+        .block {
+            fill: #f1c40f;
+        }
+        #score {
+            fill: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <svg id="game" width="800" height="600">
+        <rect class="paddle" x="350" y="550" width="100" height="20"></rect>
+        <circle class="ball" cx="400" cy="500" r="10"></circle>
+        <text id="score" x="10" y="20">Puntos: 0</text>
+        <!-- Bloques -->
+        <g id="blocks"></g>
+    </svg>
+    
+    <script>
+        const paddle = document.querySelector('.paddle');
+        const ball = document.querySelector('.ball');
+        const scoreText = document.getElementById('score');
+        const blocksGroup = document.getElementById('blocks');
+        const svg = document.getElementById('game');
+        let ballDX = 2, ballDY = -2;
+        let score = 0;
 
-    @keyframes mouthOpen {
-      0%, 100% { d: path("M 250 250 L 300 250 A 50 50 0 1 1 250 200 z"); }
-      50% { d: path("M 250 250 L 300 250 A 50 50 0 1 1 250 200 A 50 50 0 1 1 200 250 z"); }
-    }
+        // Crear bloques
+        function createBlocks() {
+            const blockWidth = 75;
+            const blockHeight = 20;
+            const rows = 5;
+            const cols = 10;
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    const block = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                    block.setAttribute('class', 'block');
+                    block.setAttribute('x', c * (blockWidth + 5) + 25);
+                    block.setAttribute('y', r * (blockHeight + 5) + 30);
+                    block.setAttribute('width', blockWidth);
+                    block.setAttribute('height', blockHeight);
+                    blocksGroup.appendChild(block);
+                }
+            }
+        }
 
-    rect {
-      animation: backgroundMove 8s infinite alternate;
-    }
+        // Mover la paleta
+        function movePaddle(event) {
+            const rect = svg.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            paddle.setAttribute('x', Math.min(Math.max(mouseX - 50, 0), 800 - 100));
+        }
 
-    path {
-      fill: #ffcc00;
-      animation: mouthOpen 0.5s ease-in-out infinite;
-    }
+        // Actualizar el estado del juego
+        function update() {
+            // Mover la bola
+            let ballX = parseFloat(ball.getAttribute('cx')) + ballDX;
+            let ballY = parseFloat(ball.getAttribute('cy')) + ballDY;
 
-    .eye {
-      fill: black;
-      animation: eyeBlink 4s infinite;
-    }
+            // Colisión con las paredes
+            if (ballX < 10 || ballX > 790) {
+                ballDX = -ballDX; // Cambiar dirección
+            }
+            if (ballY < 10) {
+                ballDY = -ballDY; // Cambiar dirección
+            } else if (ballY > 590) {
+                alert('Juego terminado. Puntuación: ' + score);
+                location.reload(); // Reiniciar el juego
+            }
 
-    @keyframes eyeBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-  </style>
+            // Colisión con la paleta
+            if (ballY > 530 && ballY < 550 && ballX > parseFloat(paddle.getAttribute('x')) && ballX < parseFloat(paddle.getAttribute('x')) + 100) {
+                ballDY = -ballDY; // Cambiar dirección
+                score += 10; // Incrementar puntuación
+                scoreText.textContent = 'Puntos: ' + score;
+            }
 
-  <!-- Background rectangle with color animation -->
-  <rect width="100%" height="100%" />
+            // Colisión con bloques
+            const blocks = document.querySelectorAll('.block');
+            blocks.forEach(block => {
+                if (block) {
+                    const blockX = parseFloat(block.getAttribute('x'));
+                    const blockY = parseFloat(block.getAttribute('y'));
+                    const blockWidth = parseFloat(block.getAttribute('width'));
+                    const blockHeight = parseFloat(block.getAttribute('height'));
 
-  <!-- Pac-Man with animated mouth -->
-  <path d="M 250 250 L 300 250 A 50 50 0 1 1 250 200 z" />
-  
-  <!-- Pac-Man Eye -->
-  <circle class="eye" cx="270" cy="230" r="5" />
-  
-  <!-- Labyrinth walls -->
-  <rect x="50" y="50" width="400" height="400" fill="none" stroke="black" stroke-width="5" />
-  <line x1="50" y1="150" x2="450" y2="150" stroke="black" stroke-width="5" />
-  <line x1="150" y1="50" x2="150" y2="450" stroke="black" stroke-width="5" />
-  <line x1="300" y1="150" x2="300" y2="450" stroke="black" stroke-width="5" />
-  <line x1="50" y1="300" x2="450" y2="300" stroke="black" stroke-width="5" />
+                    if (ballX > blockX && ballX < blockX + blockWidth && ballY > blockY && ballY < blockY + blockHeight) {
+                        ballDY = -ballDY; // Cambiar dirección
+                        block.remove(); // Eliminar bloque
+                        score += 20; // Incrementar puntuación
+                        scoreText.textContent = 'Puntos: ' + score;
+                    }
+                }
+            });
 
-  <!-- Additional design elements -->
-  <circle cx="150" cy="100" r="10" fill="blue" />
-  <circle cx="350" cy="400" r="10" fill="red" />
-  <rect x="200" y="200" width="50" height="20" fill="green" />
-  <rect x="300" y="300" width="20" height="50" fill="purple" />
+            ball.setAttribute('cx', ballX);
+            ball.setAttribute('cy', ballY);
+            requestAnimationFrame(update);
+        }
 
-  <!-- Animated text -->
-  <text x="250" y="470" font-size="30" text-anchor="middle" fill="white">
-    Pac-Man Animation
-    <animate attributeName="fill" values="white;yellow;white" dur="2s" repeatCount="indefinite"/>
-  </text>
-
-  <!-- More decorative circles -->
-  <circle cx="50" cy="50" r="5" fill="pink" />
-  <circle cx="450" cy="50" r="5" fill="cyan" />
-  <circle cx="50" cy="450" r="5" fill="magenta" />
-  <circle cx="450" cy="450" r="5" fill="lime" />
-  
-  <!-- Additional walls for the labyrinth -->
-  <line x1="200" y1="200" x2="200" y2="300" stroke="black" stroke-width="5" />
-  <line x1="350" y1="200" x2="350" y2="300" stroke="black" stroke-width="5" />
-  <line x1="250" y1="300" x2="350" y2="300" stroke="black" stroke-width="5" />
-  <line x1="250" y1="350" x2="350" y2="350" stroke="black" stroke-width="5" />
-  <line x1="250" y1="350" x2="250" y2="450" stroke="black" stroke-width="5" />
-  <line x1="200" y1="450" x2="350" y2="450" stroke="black" stroke-width="5" />
-  <line x1="200" y1="400" x2="200" y2="450" stroke="black" stroke-width="5" />
-
-  <!-- Labyrinth decorative elements -->
-  <rect x="100" y="100" width="30" height="10" fill="orange" />
-  <rect x="350" y="100" width="30" height="10" fill="orange" />
-  <rect x="100" y="350" width="10" height="30" fill="orange" />
-  <rect x="100" y="250" width="30" height="10" fill="orange" />
-  <rect x="300" y="250" width="30" height="10" fill="orange" />
-  
-</svg>
+        document.addEventListener('mousemove', movePaddle);
+        createBlocks(); // Crear bloques al iniciar
+        update(); // Iniciar actualización del juego
+    </script>
+</body>
+</html>
 
 
 

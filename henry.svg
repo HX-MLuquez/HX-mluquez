@@ -1,40 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
   <style>
-    /* Animación de apertura y cierre de la boca */
-    @keyframes chew {
+    /* Animación de apertura y cierre de la boca de Pacman */
+    @keyframes pacmanMouthOpen {
       0% {
-        d: path("M200,200 L280,200 A100,100 0 1,1 200,100 Z");
+        d: path("M300,300 L300,200 A100,100 0 1,1 400,300 L300,300 Z"); /* Boca cerrada */
       }
       50% {
-        d: path("M200,200 L270,200 A100,100 0 1,1 200,100 Z");
+        d: path("M300,300 L300,200 A100,100 0 1,1 400,300 L300,300 Z"); /* Boca abierta */
       }
       100% {
-        d: path("M200,200 L280,200 A100,100 0 1,1 200,100 Z");
+        d: path("M300,300 L300,200 A100,100 0 1,1 400,300 L300,300 Z"); /* Boca cerrada */
       }
     }
 
-    /* Estilo de Pacman */
+    /* Estilo para el cuerpo de Pacman */
     .pacman {
-      fill: #f1c40f; /* Color amarillo */
-      animation: chew 0.5s infinite; /* Animación de la boca */
+      fill: yellow;
       transform-origin: center;
+      animation: pacmanMouthOpen 0.5s infinite alternate;
     }
 
-    /* Ojo de Pacman */
+    /* Estilo para el ojo de Pacman */
     .eye {
-      fill: black; /* Color del ojo */
+      fill: black;
+    }
+
+    /* Estilo para el laberinto */
+    .maze {
+      fill: none;
+      stroke: #333;
+      stroke-width: 3;
+    }
+
+    /* Texto decorativo */
+    .decorative-text {
+      font-size: 20px;
+      fill: #333;
+      text-anchor: middle;
     }
   </style>
 
-  <!-- Fondo -->
-  <rect width="100%" height="100%" fill="#2c3e50" />
+  <!-- Fondo del laberinto -->
+  <rect width="100%" height="100%" fill="#e0e0e0" />
 
-  <!-- Pacman en el centro -->
-  <g transform="translate(200, 200)">
-    <path class="pacman" d="M0,0 L80,0 A100,100 0 1,1 0,-100 Z" />
-    <circle class="eye" cx="20" cy="-20" r="5" /> <!-- Ojo -->
-  </g>
+  <!-- Laberinto simple -->
+  <path class="maze" d="M50,50 L50,550 L550,550 L550,50 Z" />
+  <path class="maze" d="M50,150 L550,150" />
+  <path class="maze" d="M150,50 L150,550" />
+  <path class="maze" d="M250,150 L250,550" />
+  <path class="maze" d="M350,50 L350,550" />
+  <path class="maze" d="M450,150 L450,550" />
+
+  <!-- Cuerpo de Pacman -->
+  <path class="pacman" d="M300,300 L300,200 A100,100 0 1,1 400,300 L300,300 Z" />
+
+  <!-- Ojo de Pacman -->
+  <circle class="eye" cx="280" cy="260" r="10" />
+
+  <!-- Texto animado que aparece detrás de Pacman -->
+  <text x="300" y="570" class="decorative-text">¡Pacman está comiendo!</text>
+  <text x="300" y="590" class="decorative-text">¡Cuidado con los fantasmas!</text>
+
+  <!-- Efecto de sombra para Pacman -->
+  <filter id="shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+    <feOffset dx="2" dy="2" />
+    <feFlood flood-color="rgba(0,0,0,0.5)" />
+    <feComposite in2="SourceAlpha" operator="in" />
+    <feMerge>
+      <feMergeNode />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
 </svg>
+
 
 
 

@@ -1,88 +1,63 @@
 <svg version="1.1"
      baseProfile="full"
-     width="500" height="400"
+     width="500" height="500"
      xmlns="http://www.w3.org/2000/svg">
+
   <style>
-    /* Animación de fondo de colores */
-    @keyframes backgroundMove {
-      0%   { fill: #ff9f43; }
-      50%  { fill: #e74c3c; }
-      100% { fill: #ff9f43; }
-    }
-
-    /* Animación de movimiento del Pacman */
+    /* Animación de mover Pacman por el laberinto */
     @keyframes movePacman {
-      0%   { transform: translateX(-100px); }
-      100% { transform: translateX(600px); }
+      0%   { transform: translate(20px, 20px); }
+      25%  { transform: translate(420px, 20px); }
+      50%  { transform: translate(420px, 420px); }
+      75%  { transform: translate(20px, 420px); }
+      100% { transform: translate(20px, 20px); }
     }
 
-    /* Estilo del rectángulo de fondo */
-    rect {
-      animation: backgroundMove 8s infinite alternate;
+    /* Movimiento de abrir y cerrar la boca */
+    @keyframes chew {
+      0%, 100% { d: path('M50 50 L50 20 A30 30 0 1 1 80 50 Z'); } /* Boca abierta */
+      50% { d: path('M50 50 L50 50 A30 30 0 1 1 80 50 Z'); } /* Boca cerrada */
     }
 
-    /* Estilo del Pacman */
+    /* Estilo de Pacman */
     .pacman {
       fill: #f1c40f;
-      animation: movePacman 4s linear infinite;
-    }
-
-    /* Movimiento de abrir y cerrar boca */
-    @keyframes chew {
-      0%, 100% { d: path('M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 1,0 -60,0'); }
-      50% { d: path('M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 0,1 -60,0'); }
-    }
-
-    /* Estilo del círculo Pacman */
-    path {
-      animation: chew 0.3s infinite;
-    }
-
-    /* Estilos para el texto */
-    text {
-      font: 400 30px Helvetica, Arial, sans-serif;
-      text-anchor: middle;
-      fill: white;
-      transform-style: preserve-3d;
+      animation: movePacman 8s linear infinite, chew 0.3s infinite;
       transform-origin: center;
-      opacity: 1;
-      animation: fadeText 4s linear infinite;
     }
 
-    /* Animación para ocultar texto cuando Pacman pasa por él */
-    @keyframes fadeText {
-      0%   { opacity: 1; }
-      30%  { opacity: 0; }
-      100% { opacity: 1; }
+    /* Estilo del ojo de Pacman */
+    .eye {
+      fill: black;
+      cx: 60px;
+      cy: 35px;
+      r: 5px;
     }
 
-    /* Configurar cada texto con delay distinto para simular que Pacman se los "come" */
-    #text1 {
-      animation-delay: 0.5s;
-    }
-
-    #text2 {
-      animation-delay: 1.5s;
-    }
-
-    #text3 {
-      animation-delay: 2.5s;
+    /* Estilo del laberinto */
+    .wall {
+      fill: none;
+      stroke: #3498db;
+      stroke-width: 10;
     }
 
   </style>
 
-  <!-- Fondo animado -->
-  <rect width="100%" height="100%" />
+  <!-- Laberinto simple -->
+  <rect x="10" y="10" width="480" height="480" class="wall" />
+  <rect x="10" y="10" width="120" height="120" class="wall" />
+  <rect x="370" y="370" width="120" height="120" class="wall" />
+  <rect x="10" y="370" width="120" height="120" class="wall" />
+  <rect x="370" y="10" width="120" height="120" class="wall" />
 
-  <!-- Pacman -->
-  <g class="pacman" transform="translate(-100,150)">
-    <path d="M 50 50 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 1,0 -60,0" />
+  <!-- Pacman con movimiento -->
+  <g class="pacman" transform="translate(20, 20)">
+    <!-- Pacman con boca animada -->
+    <path d="M50 50 L50 20 A30 30 0 1 1 80 50 Z" />
+    <!-- Ojo de Pacman -->
+    <circle class="eye" />
   </g>
-
-  <!-- Textos animados -->
-  <text id="text1" x="50%" y="45%">Mauricio Gastón Lúquez</text>
-  <text id="text2" x="50%" y="55%">Desarrollador FullStack</text>
-  <text id="text3" x="50%" y="65%">Pacman en acción</text>
-
+  
 </svg>
+
 

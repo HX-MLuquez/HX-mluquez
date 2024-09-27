@@ -9,37 +9,30 @@
     }
     .paddle {
       fill: #e74c3c;
-      animation: paddle-move 3s linear infinite alternate;
     }
     .ball {
       fill: #f1c40f;
-      animation: ball-move 2s linear infinite;
-    }
-
-    @keyframes paddle-move {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(700px);
-      }
+      animation: ball-move 4s linear infinite;
     }
 
     @keyframes ball-move {
       0% {
         transform: translate(0, 0);
       }
-      25% {
-        transform: translate(700px, -200px);
+      20% {
+        transform: translate(300px, -200px); /* Diagonal hacia arriba a la derecha */
       }
-      50% {
-        transform: translate(700px, 0);
+      40% {
+        transform: translate(600px, -50px); /* Horizontal a la derecha */
       }
-      75% {
-        transform: translate(0, -200px);
+      60% {
+        transform: translate(800px, 300px); /* Rebote hacia abajo */
+      }
+      80% {
+        transform: translate(200px, 600px); /* Rebote hacia abajo */
       }
       100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0); /* Regresa a la posición inicial */
       }
     }
   </style>

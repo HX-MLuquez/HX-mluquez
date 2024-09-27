@@ -28,14 +28,9 @@
 
     /* Estilos de Pacman */
     .pacman {
-      fill: #f1c40f;
+      fill: #f1c40f; /* Amarillo para Pacman */
       animation: movePacman 8s linear infinite;
       transform-origin: center;
-    }
-
-    .mouth {
-      fill: #2ecc71;
-      animation: chew 0.5s infinite;
     }
 
     /* Ojo de Pacman */
@@ -44,12 +39,6 @@
       cx: 60px;
       cy: 35px;
       r: 5px;
-    }
-
-    /* Pared del laberinto */
-    .wall {
-      fill: none;
-      stroke: none; /* Sin líneas visibles para el fondo */
     }
 
     /* Textos que Pacman va comiendo */
@@ -76,21 +65,20 @@
 
   <!-- Pacman con su boca animada -->
   <g class="pacman" transform="translate(20, 20)">
-    <!-- Cuerpo de Pacman -->
-    <circle cx="50" cy="50" r="30" />
-    <!-- Boca en forma de porción triangular -->
-    <path class="mouth" d="M50 50 A30 30 0 1 1 80 50 L50 50 Z" />
+    <!-- Boca de Pacman -->
+    <path d="M50 50 A30 30 0 1 1 80 50 L50 50 Z" />
     <!-- Ojo de Pacman -->
-    <circle class="eye" />
+    <circle class="eye" cx="60" cy="35" r="5" />
   </g>
 
   <!-- Textos animados que Pacman va comiendo -->
-  <text id="text1" x="100" y="100">Mauricioooo</text>
+  <text id="text1" x="100" y="100">Mauricio</text>
   <text id="text2" x="400" y="100">Gastón</text>
   <text id="text3" x="400" y="400">Lúquez</text>
   <text id="text4" x="100" y="400">Dev</text>
 
 </svg>
+
 
 
 

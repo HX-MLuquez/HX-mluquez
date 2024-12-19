@@ -16,8 +16,10 @@ Please feel free to clone projects and raise issues if you think something could
   -->
     <a href="https://www.npmjs.com/~mauricio776101"><img src="https://img.shields.io/badge/npm-js-brightgreen"/></a>
   </p>
-   
+  <!--
   <img src="https://user-images.githubusercontent.com/80530309/149434382-85e45f80-e8b2-4c23-a9ab-51d9ce046b70.gif"/>
+  -->
+  <img src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"/>
 
 I'm a software developer who is passionate about creating technology to elevate people and help new developers to find the right path. Some technologies I enjoy working with include Javascript, React, Redux, Node JS, Express, Sequelize and Postgres
 SQL, intermediate knowledge in: Python and PHP; and a basic knowledge of: GO, React Native, MySQL and MongoDB. I am passionate about AI and the analysis of complex data structures. Am

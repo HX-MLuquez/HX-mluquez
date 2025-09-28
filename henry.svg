@@ -1,84 +1,238 @@
-<svg version="1.1"
-     baseProfile="full"
-     width="500" height="400"
-     xmlns="http://www.w3.org/2000/svg">
+<svg version="1.1" baseProfile="full" width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradientes profesionales -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="accentGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.3" />
+    </radialGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Filtros para efectos -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
   <style>
-    @keyframes backgroundMove {
-      0%   { fill: #ff9f43; }
-      50%  { fill: #e74c3c; }
-      100% { fill: #ff9f43; }
+    @keyframes backgroundPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
     }
-
-    @keyframes circle3D {
-      0%   { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
-      50%  { transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg); }
-      100% { transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg); }
+    
+    @keyframes geometricFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(10px, -15px) rotate(90deg); }
+      50% { transform: translate(0, -20px) rotate(180deg); }
+      75% { transform: translate(-10px, -15px) rotate(270deg); }
     }
-
-    @keyframes text3D1 {
-      0%   { transform: scale(1) translateZ(0px); }
-      50%  { transform: scale(1.2) translateZ(50px); }
-      100% { transform: scale(1) translateZ(0px); }
+    
+    @keyframes circuitFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
     }
-
-    @keyframes text3D2 {
-      0%   { transform: scale(1) translateY(0px) rotateY(0deg); }
-      50%  { transform: scale(1.3) translateY(-10px) rotateY(180deg); }
-      100% { transform: scale(1) translateY(0px) rotateY(0deg); }
+    
+    @keyframes dataVisualization {
+      0%, 100% { height: 40px; }
+      50% { height: 80px; }
     }
-
-    @keyframes text4D {
-      0%   { transform: scale(1) perspective(300px) rotateX(0deg); }
-      50%  { transform: scale(1.3) perspective(300px) rotateX(360deg); }
-      100% { transform: scale(1) perspective(300px) rotateX(0deg); }
+    
+    @keyframes codeMatrix {
+      0% { opacity: 0; transform: translateY(20px); }
+      50% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-20px); }
     }
-
-    rect {
-      animation: backgroundMove 8s infinite alternate;
+    
+    @keyframes nameGlow {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.4)); }
+      50% { filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.8)); }
     }
-
-    circle {
-      fill: #3498db;
-      transform-origin: center;
-      animation: circle3D 6s ease-in-out infinite;
+    
+    @keyframes skillsBounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-5px) scale(1.05); }
     }
-
-    text {
-      font: 400 30px Helvetica, Arial, sans-serif;
+    
+    .main-text {
+      font: bold 42px 'Arial', sans-serif;
       text-anchor: middle;
-      fill: white;
-      transform-style: preserve-3d;
-      transform-origin: center;
+      fill: url(#textGradient);
+      animation: nameGlow 3s ease-in-out infinite;
     }
-
-    #text1 {
-      animation: text3D1 6s ease-in-out infinite;
-      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    
+    .sub-text {
+      font: 24px 'Arial', sans-serif;
+      text-anchor: middle;
+      fill: #94a3b8;
+      animation: skillsBounce 4s ease-in-out infinite;
     }
-
-    #text2 {
-      animation: text3D2 5s ease-in-out infinite;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    
+    .bg-rect {
+      animation: backgroundPulse 6s ease-in-out infinite;
     }
-
-    #text3 {
-      animation: text4D 8s ease-in-out infinite;
-      text-shadow: 7px 7px 15px rgba(0, 0, 0, 0.7);
+    
+    .geometric {
+      animation: geometricFloat 8s ease-in-out infinite;
     }
-
+    
+    .circuit-line {
+      stroke: #06b6d4;
+      stroke-width: 2;
+      stroke-dasharray: 10 5;
+      animation: circuitFlow 3s linear infinite;
+      opacity: 0.7;
+    }
+    
+    .data-bar {
+      fill: #06b6d4;
+      animation: dataVisualization 2s ease-in-out infinite;
+    }
+    
+    .code-element {
+      fill: #0891b2;
+      font: 14px 'Courier New', monospace;
+      animation: codeMatrix 4s ease-in-out infinite;
+    }
+    
+    .tech-icon {
+      fill: none;
+      stroke: #06b6d4;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.6;
+    }
   </style>
-
-  <!-- Background rectangle with color animation -->
-  <rect width="100%" height="100%" />
-
-  <!-- Moving 3D circle -->
-  <circle cx="50%" cy="50%" r="100" />
-
-  <!-- Animated 3D text -->
-  <text id="text1" x="50%" y="45%">Mauricio Gastón Lúquez</text>
-  <text id="text2" x="50%" y="55%">Desarrollador FullStack</text>
-  <text id="text3" x="50%" y="65%"></text>
-
+  
+  <!-- Fondo principal -->
+  <rect class="bg-rect" width="100%" height="100%" fill="url(#bgGradient)" />
+  
+  <!-- Elementos geométricos flotantes -->
+  <g class="geometric">
+    <polygon points="100,50 120,80 80,80" fill="rgba(6, 182, 212, 0.3)" />
+    <rect x="680" y="80" width="30" height="30" fill="rgba(8, 145, 178, 0.4)" />
+    <circle cx="150" cy="400" r="20" fill="rgba(14, 116, 144, 0.3)" />
+    <polygon points="650,400 670,430 630,430" fill="rgba(6, 182, 212, 0.3)" />
+  </g>
+  
+  <!-- Circuitos/líneas de conexión -->
+  <g>
+    <path class="circuit-line" d="M 0,100 Q 200,50 400,100 T 800,100" />
+    <path class="circuit-line" d="M 0,200 Q 300,150 600,200 T 800,200" />
+    <path class="circuit-line" d="M 0,350 Q 250,300 500,350 T 800,350" />
+  </g>
+  
+  <!-- Visualización de datos (gráfico de barras) -->
+  <g transform="translate(50, 300)">
+    <rect class="data-bar" x="0" y="60" width="15" height="40" style="animation-delay: 0s;" />
+    <rect class="data-bar" x="20" y="40" width="15" height="60" style="animation-delay: 0.2s;" />
+    <rect class="data-bar" x="40" y="20" width="15" height="80" style="animation-delay: 0.4s;" />
+    <rect class="data-bar" x="60" y="50" width="15" height="50" style="animation-delay: 0.6s;" />
+    <rect class="data-bar" x="80" y="30" width="15" height="70" style="animation-delay: 0.8s;" />
+  </g>
+  
+  <!-- Iconos tecnológicos -->
+  <g transform="translate(600, 300)">
+    <!-- Icono de código -->
+    <g class="tech-icon">
+      <polyline points="8,18 2,12 8,6" />
+      <polyline points="16,6 22,12 16,18" />
+    </g>
+    
+    <!-- Icono de database -->
+    <g class="tech-icon" transform="translate(40, 0)">
+      <ellipse cx="12" cy="5" rx="9" ry="3"/>
+      <path d="m3 5 v14 a9 3 0 0 0 18 0 v-14"/>
+      <path d="m3 12 a9 3 0 0 0 18 0"/>
+    </g>
+    
+    <!-- Icono de servidor -->
+    <g class="tech-icon" transform="translate(80, 0)">
+      <rect x="2" y="3" width="20" height="8" rx="1"/>
+      <rect x="2" y="13" width="20" height="8" rx="1"/>
+      <line x1="6" y1="7" x2="6.01" y2="7"/>
+      <line x1="6" y1="17" x2="6.01" y2="17"/>
+    </g>
+  </g>
+  
+  <!-- Elementos de código matriz -->
+  <g class="code-element">
+    <text x="120" y="150" style="animation-delay: 0s;">function() {</text>
+    <text x="140" y="170" style="animation-delay: 0.5s;">return true;</text>
+    <text x="120" y="190" style="animation-delay: 1s;">}</text>
+    
+    <text x="600" y="120" style="animation-delay: 1.5s;">&lt;Component /&gt;</text>
+    <text x="580" y="140" style="animation-delay: 2s;">const [state, setState]</text>
+    
+    <text x="80" y="280" style="animation-delay: 2.5s;">SQL: SELECT *</text>
+    <text x="80" y="300" style="animation-delay: 3s;">FROM knowledge</text>
+  </g>
+  
+  <!-- Efecto de partículas -->
+  <g>
+    <circle cx="200" cy="180" r="2" fill="#06b6d4" opacity="0.4">
+      <animate attributeName="cy" values="180;160;180" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="320" r="3" fill="#0891b2" opacity="0.5">
+      <animate attributeName="cx" values="500;520;500" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="700" cy="250" r="2" fill="#0e7490" opacity="0.3">
+      <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Círculo central con efecto de resplandor -->
+  <circle cx="400" cy="200" r="120" fill="url(#accentGradient)" filter="url(#glow)" opacity="0.3">
+    <animate attributeName="r" values="120;140;120" dur="6s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Hexágono central -->
+  <polygon points="400,140 430,160 430,200 400,220 370,200 370,160" 
+           fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.6">
+    <animateTransform attributeName="transform" 
+                      type="rotate" 
+                      values="0 400 180;360 400 180" 
+                      dur="12s" 
+                      repeatCount="indefinite" />
+  </polygon>
+  
+  <!-- Texto principal -->
+  <text class="main-text" x="50%" y="45%">Mauricio Gastón Lúquez</text>
+  <text class="sub-text" x="50%" y="55%">Full Stack Developer · Instructor</text>
+  
+  <!-- Líneas de detalle -->
+  <line x1="250" y1="280" x2="550" y2="280" stroke="#06b6d4" stroke-width="1" opacity="0.5">
+    <animate attributeName="x2" values="250;550;250" dur="4s" repeatCount="indefinite" />
+  </line>
+  
+  <!-- Grid de puntos decorativo -->
+  <g opacity="0.2">
+    <circle cx="100" cy="100" r="1" fill="#06b6d4" />
+    <circle cx="120" cy="100" r="1" fill="#06b6d4" />
+    <circle cx="140" cy="100" r="1" fill="#06b6d4" />
+    <circle cx="700" cy="400" r="1" fill="#06b6d4" />
+    <circle cx="720" cy="400" r="1" fill="#06b6d4" />
+    <circle cx="740" cy="400" r="1" fill="#06b6d4" />
+  </g>
 </svg>
 
 

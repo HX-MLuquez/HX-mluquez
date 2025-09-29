@@ -22,7 +22,7 @@ Please feel free to clone projects and raise issues if you think something could
   <img src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"/>
 
 I'm a software developer who is passionate about creating technology to elevate people and help new developers to find the right path. Some technologies I enjoy working with include Javascript, React, Redux, Node JS, Express, Sequelize and Postgres
-SQL, intermediate knowledge in: Python and PHP; and a basic knowledge of: GO, React Native, MySQL and MongoDB. I am passionate about AI and the analysis of complex data structures. Am
+SQL, intermediate knowledge in: Python, Django, MongoDB and PHP; and a basic knowledge of: Docker, AWS services, GO, React Native, MySQL. I am passionate about AI and the analysis of complex data structures. Am
 committed, I am passionate about programming and I have created complex codes, I developed a small
 redux-like library, found on npm as "maurox-store".
 

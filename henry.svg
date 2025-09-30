@@ -285,7 +285,7 @@
         <rect
           class="data-bar"
           x="20"
-          y="40"
+          y="70"
           width="15"
           height="60"
           style="animation-delay: 0.8s"

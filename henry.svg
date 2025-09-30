@@ -248,6 +248,77 @@
           style="animation-delay: 2.5s"
         />
       </g>
+     <!-- Loader inicial -->
+      <g class="loader-container">
+        <circle
+          class="loader-circle"
+          cx="400"
+          cy="250"
+          r="60"
+          fill="url(#loaderGradient)"
+          opacity="0.3"
+        />
+
+        <polygon
+          class="loader-polygon-1"
+          points="400,200 435,220 435,260 400,280 365,260 365,220"
+          fill="none"
+          stroke="#06b5d4"
+          stroke-width="2"
+          opacity="0.8"
+        />
+
+        <polygon
+          class="loader-polygon-2"
+          points="400,210 427,225 427,255 400,270 373,255 373,225"
+          fill="none"
+          stroke="#0891b2"
+          stroke-width="2"
+          opacity="0.6"
+        />
+
+        <polygon
+          class="loader-polygon-3"
+          points="400,220 420,232 420,268 400,280 380,268 380,232"
+          fill="none"
+          stroke="#0e7490"
+          stroke-width="2"
+          opacity="0.4"
+        />
+
+        <circle
+          class="loader-particle"
+          cx="450"
+          cy="250"
+          r="4"
+          fill="#3b82f6"
+          style="animation-delay: 0s"
+        />
+        <circle
+          class="loader-particle"
+          cx="400"
+          cy="200"
+          r="3"
+          fill="#10b981"
+          style="animation-delay: 0.5s"
+        />
+        <circle
+          class="loader-particle"
+          cx="350"
+          cy="250"
+          r="4"
+          fill="#f59e0b"
+          style="animation-delay: 1s"
+        />
+        <circle
+          class="loader-particle"
+          cx="400"
+          cy="300"
+          r="3"
+          fill="#ef4444"
+          style="animation-delay: 1.5s"
+        />
+      </g>
     </svg>
 
 

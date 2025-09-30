@@ -655,6 +655,11 @@
             <text class="body-text" x="25" y="5">Artificial Intelligence</text>
             <circle cx="10" cy="30" r="4" fill="#06b5d4" />
             <text class="body-text" x="25" y="35">Complex Data Structures Analysis</text>
+            <circle cx="10" cy="60" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="65">Open Source Contributions</text>
+
+            <circle cx="10" cy="90" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="95">Teaching & Mentoring New Developers</text>
 
           </g>
          

@@ -2,7 +2,7 @@
       version="1.1"
       baseProfile="full"
       width="800"
-      height="1200"
+      height="1340"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
@@ -715,6 +715,18 @@
           <text class="small-text" x="400" y="1270" text-anchor="middle">
             Made with ❤️ and lots of ☕
           </text>
+        </g>
+        <!-- Line Divider the end -->
+        <g transform="translate(0, 1300)">
+          <line
+            x1="250"
+            y1="130"
+            x2="550"
+            y2="130"
+            stroke="#06b5d4"
+            stroke-width="2"
+            opacity="0.5"
+          />
         </g>
 
       </g>

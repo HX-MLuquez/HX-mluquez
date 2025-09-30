@@ -1,4 +1,4 @@
- <svg
+<svg
       version="1.1"
       baseProfile="full"
       width="800"
@@ -373,27 +373,29 @@
 
         <!-- About -->
         <g class="section about-section">
-          <text class="subtitle-text" x="100" y="350">💼 About Me</text>
-          <foreignObject x="100" y="365" width="600" height="150">
-            <div
-              xmlns="http://www.w3.org/1999/xhtml"
-              style="
-                color: #94a3b8;
-                font-family: Arial;
-                font-size: 16px;
-                line-height: 1.6;
-              "
-            >
-              I'm a software developer passionate about creating technology to
-              elevate people and help new developers find the right path.
-              Currently working as a Developer Instructor at
-              <span style="color: #06b5d4">Bootcamp Henry</span> in Mendoza,
-              Argentina. I'm committed to programming excellence and have
-              created complex solutions, including a redux-like library called
-              <span style="color: #06b5d4">"maurox-store"</span> available on
-              npm.
-            </div>
-          </foreignObject>
+          <text class="subtitle-text" x="100" y="450">💼 About Me</text>
+          <text class="body-text" x="100" y="480">
+            I'm a software developer passionate about creating technology to
+            elevate people and help
+          </text>
+          <text class="body-text" x="100" y="505">
+            new developers find the right path. Currently working as a Developer
+            Instructor at
+          </text>
+          <text class="body-text" x="100" y="530" fill="#06b5d4">
+            Bootcamp CoderHouse
+          </text>
+          <text class="body-text" x="232" y="530">
+            in Mendoza, Argentina. I'm committed to programming
+          </text>
+          <text class="body-text" x="100" y="555">
+            excellence and have created complex solutions, including a
+            redux-like library called
+          </text>
+          <text class="body-text" x="100" y="580" fill="#06b5d4">
+            "maurox-store"
+          </text>
+          <text class="body-text" x="208" y="580">available on npm.</text>
         </g>
 
         <!-- Tech Stack -->

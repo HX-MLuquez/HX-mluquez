@@ -647,6 +647,25 @@
             </text>
           </g>
         </g>
+        <!-- Interests -->
+        <g class="section skills-section">
+          <text class="subtitle-text" x="100" y="890">🎯 Passionate About</text>
+          <g transform="translate(100, 910)">
+            <text class="body-text" x="0" y="5">
+              • Artificial Intelligence
+            </text>
+            <text class="body-text" x="0" y="35">
+              • Complex Data Structures Analysis
+            </text>
+            <text class="body-text" x="0" y="65">
+              • Open Source Contributions
+            </text>
+            <text class="body-text" x="0" y="95">
+              • Teaching & Mentoring New Developers
+            </text>
+          </g>
+        </g>
+
          <!-- Projects -->
         <g class="section skills-section">
           <text class="subtitle-text" x="100" y="1040">

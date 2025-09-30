@@ -355,7 +355,7 @@
         <!-- Intro -->
         <g class="section about-section">
           <text class="subtitle-text" x="100" y="240">
-            👋 Welcome to my profile!
+            Welcome to my profile!
           </text>
           <text class="body-text" x="100" y="270">
             You have finally discovered my Github profile.
@@ -649,7 +649,7 @@
         </g>
         <!-- Interests -->
         <g class="section skills-section">
-          <text class="subtitle-text" x="100" y="890">🎯 Passionate About</text>
+          <text class="subtitle-text" x="100" y="890">Passionate About</text>
           <g transform="translate(100, 910)">
             <circle cx="10" cy="0" r="4" fill="#06b5d4" />
             <text class="body-text" x="25" y="5">Artificial Intelligence</text>
@@ -682,10 +682,10 @@
             maurox-store
           </text>
           <text class="small-text" x="120" y="1105">
-            A redux-like state management library available on npm
+            A redux-like state management library available on npm 🔗
           </text>
           <text class="link-text" x="120" y="1125">
-            🔗 npmjs.com/~mauricio776101
+            npmjs.com/~mauricio776101
           </text>
         </g>
 
@@ -693,8 +693,8 @@
         <g class="section contact-section">
           <text class="subtitle-text" x="100" y="1170">📫 Let's Connect</text>
           <text class="body-text" x="100" y="1195">
-            💬 Ask me about: JavaScript · ReactJS · Redux · NodeJS · PostgreSQL
-            · Sequelize
+            💬 Ask me about: JavaScript · React JS · Redux · Node JS · Postgres SQL
+            · Sequelize - Mongo DB - Python
           </text>
         </g>
 

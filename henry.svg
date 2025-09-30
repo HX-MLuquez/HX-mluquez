@@ -391,6 +391,262 @@
           </text>
           <text class="body-text" x="208" y="475">available on npm.</text>
         </g>
+        <!-- Tech Stack -->
+        <g class="section tech-section">
+          <text class="subtitle-text" x="100" y="560">Tech Stack</text>
+
+          <!-- Primary Technologies -->
+          <text class="small-text" x="100" y="590">Expert Level:</text>
+          <g transform="translate(100, 600)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="110"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="55" y="21" text-anchor="middle" class="body-text">
+              JavaScript
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="120"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="160" y="21" text-anchor="middle" class="body-text">
+              React
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="210"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="250" y="21" text-anchor="middle" class="body-text">
+              Redux
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="300"
+              y="0"
+              width="90"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="345" y="21" text-anchor="middle" class="body-text">
+              Node.js
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="400"
+              y="0"
+              width="90"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="445" y="21" text-anchor="middle" class="body-text">
+              Express
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="500"
+              y="0"
+              width="100"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="550" y="21" text-anchor="middle" class="body-text">
+              PostgreSQL
+            </text>
+          </g>
+
+          <!-- Intermediate -->
+          <text class="small-text" x="100" y="710">Intermediate Level:</text>
+          <g transform="translate(100, 720)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="40" y="21" text-anchor="middle" class="body-text">
+              Python
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="90"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="130" y="21" text-anchor="middle" class="body-text">
+              Django
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="180"
+              y="0"
+              width="100"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="230" y="21" text-anchor="middle" class="body-text">
+              MongoDB
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="290"
+              y="0"
+              width="70"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="325" y="21" text-anchor="middle" class="body-text">
+              PHP
+            </text>
+          </g>
+
+          <!-- Basic -->
+          <text class="small-text" x="100" y="790">Basic Knowledge:</text>
+          <g transform="translate(100, 800)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="40" y="21" text-anchor="middle" class="small-text">
+              Docker
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="90"
+              y="0"
+              width="70"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="125" y="21" text-anchor="middle" class="small-text">
+              AWS
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="170"
+              y="0"
+              width="60"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="200" y="21" text-anchor="middle" class="small-text">
+              GO
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="240"
+              y="0"
+              width="120"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="300" y="21" text-anchor="middle" class="small-text">
+              React Native
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="370"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="410" y="21" text-anchor="middle" class="small-text">
+              MySQL
+            </text>
+          </g>
+        </g>
 
       </g>
     </svg>

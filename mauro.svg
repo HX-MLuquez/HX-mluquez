@@ -174,7 +174,7 @@
         .link-text {
           fill: #06b5d4;
           font: 14px "Arial", sans-serif;
-          text-decoration: underline;
+          text-decoration: none;
           cursor: pointer;
         }
 
@@ -338,29 +338,19 @@
             opacity="0.5"
           />
 
-          <!-- Badges -->
-          <g transform="translate(110, 160)">
-            <!-- <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#1e293b" opacity="0.8"/>
-        <text x="0" y="5" text-anchor="middle" class="body-text">📍 Mendoza, Argentina</text> -->
-            <g class="section skills-section">
-              <text class="body-text" x="0" y="20" font-weight="bold">
-                LinkedIn 🔗
-              </text>
-              <text class="link-text" x="4" y="42">
-                linkedin.com/in/mauricio-gastón-lúquez-aaa78571
-              </text>
-            </g>
-          </g>
-        </g>
+          
         <!-- Intro -->
         <g class="section about-section">
-          <text class="subtitle-text" x="100" y="240">
+          <text class="subtitle-text" x="100" y="200">
             Welcome to my profile!
           </text>
-          <text class="body-text" x="100" y="270">
+          <text class="body-text" x="100" y="230">
+            Please feel free to clone projects and raise issues if you think something could be better.
+          </text>
+          <text class="body-text" x="100" y="255">
             You have finally discovered my Github profile.
           </text>
-          <text class="body-text" x="100" y="295">
+          <text class="body-text" x="100" y="280">
             Please feel free to clone projects and raise issues if you think
             something could be better.
           </text>
@@ -682,7 +672,7 @@
             maurox-store
           </text>
           <text class="small-text" x="120" y="1105">
-            A redux-like state management library available on npm 🔗
+            A redux-like state management library available on npm
           </text>
           <text class="link-text" x="120" y="1125">
             npmjs.com/~mauricio776101

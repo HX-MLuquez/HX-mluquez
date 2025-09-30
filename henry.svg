@@ -365,6 +365,32 @@
             something could be better.
           </text>
         </g>
+         <!-- About -->
+        <g class="section about-section">
+          <text class="subtitle-text" x="100" y="345">💼 About Me</text>
+          <text class="body-text" x="100" y="375">
+            I'm a software developer passionate about creating technology to
+            elevate people and help
+          </text>
+          <text class="body-text" x="100" y="400">
+            new developers find the right path. Currently working as a Developer
+            Instructor at
+          </text>
+          <text class="body-text" x="100" y="425" fill="#06b5d4">
+            Bootcamp CoderHouse.
+          </text>
+          <text class="body-text" x="280" y="425">
+            I'm committed to programming
+          </text>
+          <text class="body-text" x="100" y="450">
+            excellence and have created complex solutions, including a
+            redux-like library called
+          </text>
+          <text class="body-text" x="100" y="475" fill="#06b5d4">
+            "maurox-store"
+          </text>
+          <text class="body-text" x="208" y="475">available on npm.</text>
+        </g>
 
       </g>
     </svg>

@@ -200,6 +200,54 @@
           fill: #64748b;
         }
       </style>
+    <!-- Fondo -->
+      <rect width="100%" height="100%" fill="url(#bgGradient)" />
+
+      <!-- Estrellas decorativas -->
+      <g opacity="0.6">
+        <circle
+          class="star"
+          cx="100"
+          cy="100"
+          r="2"
+          style="animation-delay: 0s"
+        />
+        <circle
+          class="star"
+          cx="700"
+          cy="150"
+          r="2"
+          style="animation-delay: 1s"
+        />
+        <circle
+          class="star"
+          cx="150"
+          cy="900"
+          r="2"
+          style="animation-delay: 2s"
+        />
+        <circle
+          class="star"
+          cx="650"
+          cy="1000"
+          r="2"
+          style="animation-delay: 1.5s"
+        />
+        <circle
+          class="star"
+          cx="200"
+          cy="500"
+          r="1.5"
+          style="animation-delay: 0.5s"
+        />
+        <circle
+          class="star"
+          cx="600"
+          cy="700"
+          r="1.5"
+          style="animation-delay: 2.5s"
+        />
+      </g>
     </svg>
 
 

@@ -1,529 +1,741 @@
-<svg
+ <svg
       version="1.1"
       baseProfile="full"
       width="800"
-      height="500"
+      height="1200"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <!-- Gradientes profesionales -->
+        <!-- Gradientes -->
         <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" style="stop-color: #0c1221; stop-opacity: 1" />
-          <stop offset="30%" style="stop-color: #121a27; stop-opacity: 1" />
-          <stop offset="70%" style="stop-color: #1b2430; stop-opacity: 1" />
+          <stop offset="50%" style="stop-color: #1b2430; stop-opacity: 1" />
           <stop offset="100%" style="stop-color: #0e131a; stop-opacity: 1" />
         </linearGradient>
 
-        <radialGradient id="accentGradient" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" style="stop-color: #06b5d453; stop-opacity: 0.8" />
-          <stop
-            offset="100%"
-            style="stop-color: #0890b25d; stop-opacity: 0.3"
-          />
-        </radialGradient>
-
         <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color: #06b5d4e1; stop-opacity: 1" />
-          <stop offset="50%" style="stop-color: #0890b2cb; stop-opacity: 1" />
-          <stop offset="100%" style="stop-color: #0e7490e6; stop-opacity: 1" />
+          <stop offset="0%" style="stop-color: #06b5d4; stop-opacity: 1" />
+          <stop offset="50%" style="stop-color: #0891b2; stop-opacity: 1" />
+          <stop offset="100%" style="stop-color: #0e7490; stop-opacity: 1" />
         </linearGradient>
 
-        <!-- Filtros para efectos -->
+        <radialGradient id="loaderGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color: #06b5d4; stop-opacity: 0.8" />
+          <stop offset="100%" style="stop-color: #0891b2; stop-opacity: 0.2" />
+        </radialGradient>
+
         <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
           <feMerge>
             <feMergeNode in="coloredBlur" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
-
-        <filter id="shadow">
-          <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3" />
-        </filter>
       </defs>
 
       <style>
-        @keyframes backgroundPulse {
-          0%,
-          100% {
-            opacity: 2;
-          }
-          50% {
-            opacity: 2;
-          }
-        }
-
-           @keyframes starFloat {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      25% { transform: translate(5px, -8px) rotate(45deg); }
-      50% { transform: translate(0, -10px) rotate(90deg); }
-      75% { transform: translate(-5px, -8px) rotate(135deg); }
-    }
-    
-    @keyframes starTwinkle {
-      0%, 100% { opacity: 0.4; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(1.1); }
-    }
-
-        @keyframes circuitFlow {
-          0% {
-            stroke-dashoffset: 100;
-          }
-          100% {
-            stroke-dashoffset: 0;
-          }
-        }
-
-        @keyframes dataVisualization {
-          0%,
-          100% {
-            height: 24px;
-          }
-          50% {
-            height: 40px;
-          }
-        }
-
-        @keyframes codeMatrix {
-          0% {
+        @keyframes fadeIn {
+          from {
             opacity: 0;
-            transform: translateY(20px);
           }
-          50% {
+          to {
             opacity: 1;
-            transform: translateY(0);
           }
-          100% {
+        }
+
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
             opacity: 0;
-            transform: translateY(-20px);
           }
         }
 
-        @keyframes nameGlow {
-          0%,
-          100% {
-            filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.4));
+        @keyframes slideUp {
+          from {
+            transform: translateY(30px);
+            opacity: 0;
           }
-          50% {
-            filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.8));
-          }
-        }
-
-        @keyframes skillsBounce {
-          0%,
-          100% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-5px) scale(1.05);
+          to {
+            transform: translateY(0);
+            opacity: 1;
           }
         }
 
-        @keyframes iconRotating {
-          0% {
+        @keyframes rotate {
+          from {
             transform: rotate(0deg);
           }
-          100% {
+          to {
             transform: rotate(360deg);
           }
         }
 
-        @keyframes glowElement {
+        @keyframes rotateReverse {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+
+        @keyframes pulse {
           0%,
           100% {
             transform: scale(1);
             opacity: 0.6;
           }
           50% {
-            transform: scale(1.3);
+            transform: scale(1.1);
             opacity: 1;
           }
         }
 
-        .main-text {
-          font: bold 42px "Arial", sans-serif;
-          text-anchor: middle;
+        @keyframes loaderExpand {
+          0% {
+            r: 60;
+            opacity: 1;
+          }
+          100% {
+            r: 400;
+            opacity: 0;
+          }
+        }
+
+        .loader-container {
+          animation: fadeOut 0.5s ease-out 3s forwards;
+          pointer-events: none;
+        }
+
+        .loader-circle {
+          animation: loaderExpand 3s ease-out forwards;
+        }
+
+        .loader-polygon-1 {
+          transform-origin: 400px 250px;
+          animation: rotate 2s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-polygon-2 {
+          transform-origin: 400px 250px;
+          animation: rotateReverse 3s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-polygon-3 {
+          transform-origin: 400px 250px;
+          animation: rotate 4s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-particle {
+          animation: pulse 2s ease-in-out infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .main-content {
+          opacity: 0;
+          animation: fadeIn 1s ease-in 3.2s forwards;
+        }
+
+        .section {
+          animation: slideUp 0.8s ease-out forwards;
+          opacity: 0;
+        }
+
+        .header-section {
+          animation-delay: 3.5s;
+        }
+        .about-section {
+          animation-delay: 3.8s;
+        }
+        .tech-section {
+          animation-delay: 4.1s;
+        }
+        .skills-section {
+          animation-delay: 4.4s;
+        }
+        .contact-section {
+          animation-delay: 4.7s;
+        }
+
+        .star {
+          fill: rgba(6, 182, 212, 0.6);
+          animation: pulse 4s ease-in-out infinite;
+        }
+
+        .tech-badge {
+          transition: all 0.3s ease;
+        }
+
+        .link-text {
+          fill: #06b5d4;
+          font: 14px "Arial", sans-serif;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .title-text {
+          font: bold 32px "Arial", sans-serif;
           fill: url(#textGradient);
-          animation: nameGlow 3s ease-in-out infinite;
+          filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
         }
 
-        .sub-text {
-          font: 24px "Arial", sans-serif;
-          text-anchor: middle;
+        .subtitle-text {
+          font: bold 20px "Arial", sans-serif;
+          fill: #06b5d4;
+        }
+
+        .body-text {
+          font: 16px "Arial", sans-serif;
           fill: #94a3b8;
-          animation: skillsBounce 12s ease-in-out infinite;
+          line-height: 1.6;
         }
 
-        .bg-rect {
-          animation: backgroundPulse 6s ease-in-out infinite;
-        }
-
-        .stars {
-      animation: starFloat 15s ease-in-out infinite;
-    }
-
-    .star {
-      fill: rgba(6, 182, 212, 0.6);
-      animation: starTwinkle 6s ease-in-out infinite;
-    }
-
-        .circuit-line {
-          stroke: #06b6d4;
-          stroke-width: 2;
-          stroke-dasharray: 10 5;
-          animation: circuitFlow 3s linear infinite;
-          opacity: 0.7;
-        }
-
-        .data-bar {
-          fill: #06b6d4;
-          animation: dataVisualization 2s ease-in-out infinite;
-        }
-
-        .code-element {
-          fill: #0891b2;
-          font: 14px "Courier New", monospace;
-          animation: codeMatrix 4s ease-in-out infinite;
-        }
-
-        .tech-icon {
-          fill: none;
-          stroke: #06b6d4;
-          stroke-width: 2;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-          opacity: 0.6;
-        }
-
-        .icon-rotating {
-          animation: iconRotating 12s linear infinite;
-        }
-
-        .glow-element {
-          animation: glowElement 4s ease-in-out infinite;
+        .small-text {
+          font: 14px "Arial", sans-serif;
+          fill: #64748b;
         }
       </style>
 
-      <!-- Fondo principal -->
-      <rect
-        class="bg-rect"
-        width="100%"
-        height="100%"
-        fill="url(#bgGradient)"
-      />
+      <!-- Fondo -->
+      <rect width="100%" height="100%" fill="url(#bgGradient)" />
 
-      <!-- Estrellas flotantes -->
-     <g class="stars">
-    <g class="star" style="animation-delay: 0s;">
-      <!-- Estrella tipo rayito 1 -->
-      <g>
-        <line x1="100" y1="45" x2="100" y2="65" stroke="rgba(6, 182, 212, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="92" y1="55" x2="108" y2="55" stroke="rgba(6, 182, 212, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="94" y1="48" x2="106" y2="62" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="106" y1="48" x2="94" y2="62" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g class="star" style="animation-delay: 1.5s;">
-      <!-- Estrella tipo rayito 2 -->
-      <g>
-        <line x1="695" y1="72" x2="695" y2="98" stroke="rgba(8, 145, 178, 0.7)" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="682" y1="85" x2="708" y2="85" stroke="rgba(8, 145, 178, 0.7)" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="686" y1="76" x2="704" y2="94" stroke="rgba(8, 145, 178, 0.5)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="704" y1="76" x2="686" y2="94" stroke="rgba(8, 145, 178, 0.5)" stroke-width="2" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g class="star" style="animation-delay: 3s;">
-      <!-- Estrella tipo rayito 3 -->
-      <g>
-        <line x1="150" y1="392" x2="150" y2="418" stroke="rgba(14, 116, 144, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="137" y1="405" x2="163" y2="405" stroke="rgba(14, 116, 144, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="141" y1="396" x2="159" y2="414" stroke="rgba(14, 116, 144, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="159" y1="396" x2="141" y2="414" stroke="rgba(14, 116, 144, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g class="star" style="animation-delay: 4.5s;">
-      <!-- Estrella tipo rayito 4 -->
-      <g>
-        <line x1="655" y1="392" x2="655" y2="418" stroke="rgba(6, 182, 212, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="642" y1="405" x2="668" y2="405" stroke="rgba(6, 182, 212, 0.6)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="646" y1="396" x2="664" y2="414" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="664" y1="396" x2="646" y2="414" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g class="star" style="animation-delay: 2.2s;">
-      <!-- Estrella tipo rayito 5 (pequeña) -->
-      <g>
-        <line x1="200" y1="346" x2="200" y2="364" stroke="rgba(6, 182, 212, 0.5)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="191" y1="355" x2="209" y2="355" stroke="rgba(6, 182, 212, 0.5)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="194" y1="349" x2="206" y2="361" stroke="rgba(6, 182, 212, 0.3)" stroke-width="1" stroke-linecap="round"/>
-        <line x1="206" y1="349" x2="194" y2="361" stroke="rgba(6, 182, 212, 0.3)" stroke-width="1" stroke-linecap="round"/>
-      </g>
-    </g>
-    <g class="star" style="animation-delay: 3.7s;">
-      <!-- Estrella tipo rayito 6 (pequeña) -->
-      <g>
-        <line x1="600" y1="146" x2="600" y2="164" stroke="rgba(8, 145, 178, 0.6)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="591" y1="155" x2="609" y2="155" stroke="rgba(8, 145, 178, 0.6)" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="594" y1="149" x2="606" y2="161" stroke="rgba(8, 145, 178, 0.4)" stroke-width="1" stroke-linecap="round"/>
-        <line x1="606" y1="149" x2="594" y2="161" stroke="rgba(8, 145, 178, 0.4)" stroke-width="1" stroke-linecap="round"/>
-      </g>
-    </g>
-  </g>
-
-      <!-- Circuitos/líneas de conexión -->
-
-      <!-- Visualización de datos (gráfico de barras) -->
-      <g transform="translate(50, 300)">
-        <rect
-          class="data-bar"
-          x="0"
-          y="60"
-          width="15"
-          height="40"
+      <!-- Estrellas decorativas -->
+      <g opacity="0.6">
+        <circle
+          class="star"
+          cx="100"
+          cy="100"
+          r="2"
+          style="animation-delay: 0s"
+        />
+        <circle
+          class="star"
+          cx="700"
+          cy="150"
+          r="2"
           style="animation-delay: 1s"
         />
-        <rect
-          class="data-bar"
-          x="20"
-          y="70"
-          width="15"
-          height="60"
-          style="animation-delay: 0.8s"
-        />
-        <rect
-          class="data-bar"
-          x="40"
-          y="60"
-          width="15"
-          height="80"
-          style="animation-delay: 0.40s"
-        />
-        <rect
-          class="data-bar"
-          x="60"
-          y="50"
-          width="15"
-          height="50"
-          style="animation-delay: 0.8s"
-        />
-        <rect
-          class="data-bar"
-          x="80"
-          y="70"
-          width="15"
-          height="70"
-          style="animation-delay: 0.10s"
-        />
-      </g>
-
-      <!-- Iconos tecnológicos -->
-      <g transform="translate(600, 300)">
-        <!-- Icono de código -->
-        <g class="tech-icon">
-          <polyline points="8,18 2,12 8,6" />
-          <polyline points="16,6 22,12 16,18" />
-        </g>
-
-        <!-- Icono de database -->
-        <g class="tech-icon" transform="translate(40, 0)">
-          <ellipse cx="12" cy="5" rx="9" ry="3" />
-          <path d="m3 5 v14 a9 3 0 0 0 18 0 v-14" />
-          <path d="m3 12 a9 3 0 0 0 18 0" />
-        </g>
-
-        <!-- Icono de servidor -->
-        <g class="tech-icon" transform="translate(80, 0)">
-          <rect x="2" y="3" width="20" height="8" rx="1" />
-          <rect x="2" y="13" width="20" height="8" rx="1" />
-          <line x1="6" y1="7" x2="6.01" y2="7" />
-          <line x1="6" y1="17" x2="6.01" y2="17" />
-        </g>
-      </g>
-
-      <!-- Elementos de código matriz -->
-      <g class="code-element">
-        <text x="120" y="150" style="animation-delay: 0s">function() {</text>
-        <text x="140" y="170" style="animation-delay: 0.5s">return true;</text>
-        <text x="120" y="190" style="animation-delay: 1s">}</text>
-
-        <text x="600" y="120" style="animation-delay: 1.5s">
-          &lt;Component /&gt;
-        </text>
-        <text x="580" y="140" style="animation-delay: 2s">
-          const [state, setState]
-        </text>
-
-        <text x="80" y="280" style="animation-delay: 2.5s">SQL: SELECT *</text>
-        <text x="80" y="300" style="animation-delay: 3s">FROM knowledge</text>
-        <text x="80" y="330" style="animation-delay: 3.5s">NoSQL: flexible schema </text>
-      </g>
-
-      <!-- Efecto de partículas -->
-      <g>
-        <circle cx="200" cy="180" r="2" fill="#06b6d4" opacity="0.4">
-          <animate
-            attributeName="cy"
-            values="180;160;180"
-            dur="3s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        <circle cx="500" cy="320" r="3" fill="#0891b2" opacity="0.5">
-          <animate
-            attributeName="cx"
-            values="500;520;500"
-            dur="4s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        <circle cx="700" cy="250" r="2" fill="#0e7490" opacity="0.3">
-          <animate
-            attributeName="r"
-            values="2;4;2"
-            dur="2s"
-            repeatCount="indefinite"
-          />
-        </circle>
-      </g>
-
-      <!-- Área de presentación central combinada -->
-      <g transform="translate(400, 200)">
-        <!-- Círculos del área central -->
         <circle
-          cx="0"
-          cy="0"
-          r="80"
+          class="star"
+          cx="150"
+          cy="900"
+          r="2"
+          style="animation-delay: 2s"
+        />
+        <circle
+          class="star"
+          cx="650"
+          cy="1000"
+          r="2"
+          style="animation-delay: 1.5s"
+        />
+        <circle
+          class="star"
+          cx="200"
+          cy="500"
+          r="1.5"
+          style="animation-delay: 0.5s"
+        />
+        <circle
+          class="star"
+          cx="600"
+          cy="700"
+          r="1.5"
+          style="animation-delay: 2.5s"
+        />
+      </g>
+
+      <!-- Loader inicial -->
+      <g class="loader-container">
+        <circle
+          class="loader-circle"
+          cx="400"
+          cy="250"
+          r="60"
+          fill="url(#loaderGradient)"
+          opacity="0.3"
+        />
+
+        <polygon
+          class="loader-polygon-1"
+          points="400,200 435,220 435,260 400,280 365,260 365,220"
           fill="none"
-          stroke="#3b82f6"
+          stroke="#06b5d4"
+          stroke-width="2"
+          opacity="0.8"
+        />
+
+        <polygon
+          class="loader-polygon-2"
+          points="400,210 427,225 427,255 400,270 373,255 373,225"
+          fill="none"
+          stroke="#0891b2"
           stroke-width="2"
           opacity="0.6"
         />
-        <circle
-          cx="0"
-          cy="0"
-          r="60"
+
+        <polygon
+          class="loader-polygon-3"
+          points="400,220 420,232 420,268 400,280 380,268 380,232"
           fill="none"
-          stroke="#10b981"
+          stroke="#0e7490"
           stroke-width="2"
           opacity="0.4"
         />
+
         <circle
-          cx="0"
-          cy="0"
-          r="40"
-          fill="none"
-          stroke="#f59e0b"
-          stroke-width="1"
-          opacity="0.3"
+          class="loader-particle"
+          cx="450"
+          cy="250"
+          r="4"
+          fill="#3b82f6"
+          style="animation-delay: 0s"
         />
-
-        <!-- Círculo central con efecto de resplandor -->
         <circle
-          cx="0"
-          cy="0"
-          r="90"
-          fill="url(#accentGradient)"
-          filter="url(#glow)"
-          opacity="0.3"
-        >
-          <animate
-            attributeName="r"
-            values="90;110;90"
-            dur="6s"
-            repeatCount="indefinite"
-          />
-        </circle>
-       
-        <polygon
-          points="0,-25 17.10,-18.74 25,0 17.10,18.74 0,25 -17.10,18.74 -25,0 -17.10,-18.74 -8.68,-23.48"
-          fill="none"
-          stroke="#06b6d4"
-          stroke-width="2"
-          opacity="0.6"
-          class="icon-rotating"
+          class="loader-particle"
+          cx="400"
+          cy="200"
+          r="3"
+          fill="#10b981"
+          style="animation-delay: 0.5s"
         />
-
-        <!-- Polígono de 8 lados central rotatorio -->
-        <polygon
-          points="0,-25 17.68,-17.68 25,0 17.68,17.68 0,25 -17.68,17.68 -25,0 -17.68,-17.68"
-          fill="none"
-          stroke="#06b6d4"
-          stroke-width="2"
-          opacity="0.6"
-          class="icon-rotating-reverse"
+        <circle
+          class="loader-particle"
+          cx="350"
+          cy="250"
+          r="4"
+          fill="#f59e0b"
+          style="animation-delay: 1s"
         />
-        <!-- Hexágono central rotatorio -->
-        <polygon
-          points="0,-25 22,-12 22,12 0,25 -22,12 -22,-12"
-          fill="none"
-          stroke="#06b6d4"
-          stroke-width="2"
-          opacity="0.6"
-          class="icon-rotating"
+        <circle
+          class="loader-particle"
+          cx="400"
+          cy="300"
+          r="3"
+          fill="#ef4444"
+          style="animation-delay: 1.5s"
         />
-
-        <!-- Partículas orbitales -->
-        <g>
-          <circle cx="70" cy="0" r="3" fill="#3b82f6" class="glow-element" />
-          <circle
-            cx="0"
-            cy="-70"
-            r="2"
-            fill="#10b981"
-            class="glow-element"
-            style="animation-delay: 1s"
-          />
-          <circle
-            cx="-70"
-            cy="0"
-            r="3"
-            fill="#f59e0b"
-            class="glow-element"
-            style="animation-delay: 2s"
-          />
-          <circle
-            cx="0"
-            cy="70"
-            r="2"
-            fill="#ef4444"
-            class="glow-element"
-            style="animation-delay: 3s"
-          />
-        </g>
       </g>
 
-      <!-- Texto principal combinado -->
-      <text class="main-text" x="440" y="380">Mauricio G. LUQUEZ</text>
-      <text class="sub-text" x="450" y="420">
-        Full Stack Developer · Instructor
-      </text>
+      <!-- Contenido principal -->
+      <g class="main-content">
+        <!-- Header -->
+        <g class="section header-section">
+          <text class="title-text" x="400" y="80" text-anchor="middle">
+            Mauricio G LUQUEZ
+          </text>
+          <text class="subtitle-text" x="400" y="110" text-anchor="middle">
+            Full Stack Developer · Instructor
+          </text>
+          <line
+            x1="250"
+            y1="130"
+            x2="550"
+            y2="130"
+            stroke="#06b5d4"
+            stroke-width="2"
+            opacity="0.5"
+          />
 
-      <!-- Línea divisoria animada -->
-      <line
-        x1="290"
-        y1="460"
-        x2="925"
-        y2="460"
-        stroke="#06b6d4"
-        stroke-width="1"
-        opacity="0.5"
-      >
-        <animate
-          attributeName="x2"
-          values="290;670;290"
-          dur="12s"
-          repeatCount="indefinite"
-        />
-      </line>
+          <!-- Badges -->
+          <g transform="translate(110, 160)">
+            <!-- <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#1e293b" opacity="0.8"/>
+        <text x="0" y="5" text-anchor="middle" class="body-text">📍 Mendoza, Argentina</text> -->
+            <g class="section skills-section">
+              <text class="body-text" x="0" y="20" font-weight="bold">
+                LinkedIn 🔗
+              </text>
+              <text class="link-text" x="4" y="42">
+                linkedin.com/in/mauricio-gastón-lúquez-aaa78571
+              </text>
+            </g>
+          </g>
+        </g>
 
-      <!-- Grid de puntos decorativo -->
-      <g opacity="0.2">
-        <circle cx="100" cy="100" r="1" fill="#06b6d4" />
-        <circle cx="120" cy="100" r="1" fill="#06b6d4" />
-        <circle cx="140" cy="100" r="1" fill="#06b6d4" />
-        <circle cx="700" cy="400" r="1" fill="#06b6d4" />
-        <circle cx="720" cy="400" r="1" fill="#06b6d4" />
-        <circle cx="740" cy="400" r="1" fill="#06b6d4" />
+        <!-- Intro -->
+        <g class="section about-section">
+          <text class="subtitle-text" x="100" y="240">
+            👋 Welcome to my profile!
+          </text>
+          <text class="body-text" x="100" y="270">
+            You have finally discovered my Github profile.
+          </text>
+          <text class="body-text" x="100" y="295">
+            Please feel free to clone projects and raise issues if you think
+            something could be better.
+          </text>
+        </g>
+
+        <!-- About -->
+        <g class="section about-section">
+          <text class="subtitle-text" x="100" y="350">💼 About Me</text>
+          <foreignObject x="100" y="365" width="600" height="150">
+            <div
+              xmlns="http://www.w3.org/1999/xhtml"
+              style="
+                color: #94a3b8;
+                font-family: Arial;
+                font-size: 16px;
+                line-height: 1.6;
+              "
+            >
+              I'm a software developer passionate about creating technology to
+              elevate people and help new developers find the right path.
+              Currently working as a Developer Instructor at
+              <span style="color: #06b5d4">Bootcamp Henry</span> in Mendoza,
+              Argentina. I'm committed to programming excellence and have
+              created complex solutions, including a redux-like library called
+              <span style="color: #06b5d4">"maurox-store"</span> available on
+              npm.
+            </div>
+          </foreignObject>
+        </g>
+
+        <!-- Tech Stack -->
+        <g class="section tech-section">
+          <text class="subtitle-text" x="100" y="560">Tech Stack</text>
+
+          <!-- Primary Technologies -->
+          <text class="small-text" x="100" y="590">Expert Level:</text>
+          <g transform="translate(100, 600)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="110"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="55" y="21" text-anchor="middle" class="body-text">
+              JavaScript
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="120"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="160" y="21" text-anchor="middle" class="body-text">
+              React
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="210"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="250" y="21" text-anchor="middle" class="body-text">
+              Redux
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="300"
+              y="0"
+              width="90"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="345" y="21" text-anchor="middle" class="body-text">
+              Node.js
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="400"
+              y="0"
+              width="90"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="445" y="21" text-anchor="middle" class="body-text">
+              Express
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="500"
+              y="0"
+              width="100"
+              height="32"
+              rx="16"
+              fill="#0891b2"
+              opacity="0.2"
+              stroke="#06b5d4"
+              stroke-width="1"
+            />
+            <text x="550" y="21" text-anchor="middle" class="body-text">
+              PostgreSQL
+            </text>
+          </g>
+
+          <!-- <g transform="translate(100, 640)">
+        <rect class="tech-badge" x="0" y="0" width="120" height="32" rx="16" fill="#0891b2" opacity="0.2" stroke="#06b5d4" stroke-width="1"/>
+        <text x="60" y="21" text-anchor="middle" class="body-text">PostgreSQL</text>
+      </g> -->
+
+          <!-- Intermediate -->
+          <text class="small-text" x="100" y="710">Intermediate Level:</text>
+          <g transform="translate(100, 720)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="40" y="21" text-anchor="middle" class="body-text">
+              Python
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="90"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="130" y="21" text-anchor="middle" class="body-text">
+              Django
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="180"
+              y="0"
+              width="100"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="230" y="21" text-anchor="middle" class="body-text">
+              MongoDB
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="290"
+              y="0"
+              width="70"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="325" y="21" text-anchor="middle" class="body-text">
+              PHP
+            </text>
+          </g>
+
+          <!-- Basic -->
+          <text class="small-text" x="100" y="790">Basic Knowledge:</text>
+          <g transform="translate(100, 800)">
+            <rect
+              class="tech-badge"
+              x="0"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="40" y="21" text-anchor="middle" class="small-text">
+              Docker
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="90"
+              y="0"
+              width="70"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="125" y="21" text-anchor="middle" class="small-text">
+              AWS
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="170"
+              y="0"
+              width="60"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="200" y="21" text-anchor="middle" class="small-text">
+              GO
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="240"
+              y="0"
+              width="120"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="300" y="21" text-anchor="middle" class="small-text">
+              React Native
+            </text>
+
+            <rect
+              class="tech-badge"
+              x="370"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.6"
+              stroke="#334155"
+              stroke-width="1"
+            />
+            <text x="410" y="21" text-anchor="middle" class="small-text">
+              MySQL
+            </text>
+          </g>
+        </g>
+
+        <!-- Interests -->
+        <g class="section skills-section">
+          <text class="subtitle-text" x="100" y="890">🎯 Passionate About</text>
+          <g transform="translate(100, 910)">
+            <circle cx="10" cy="0" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="5">Artificial Intelligence</text>
+
+            <circle cx="10" cy="30" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="35">
+              Complex Data Structures Analysis
+            </text>
+
+            <circle cx="10" cy="60" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="65">
+              Open Source Contributions
+            </text>
+
+            <circle cx="10" cy="90" r="4" fill="#06b5d4" />
+            <text class="body-text" x="25" y="95">
+              Teaching & Mentoring New Developers
+            </text>
+          </g>
+        </g>
+
+        <!-- Projects -->
+        <g class="section skills-section">
+          <text class="subtitle-text" x="100" y="1040">
+            📦 Featured Project
+          </text>
+          <rect
+            x="100"
+            y="1055"
+            width="600"
+            height="80"
+            rx="10"
+            fill="#1e293b"
+            opacity="0.6"
+            stroke="#06b5d4"
+            stroke-width="1"
+          />
+          <text class="body-text" x="120" y="1080" font-weight="bold">
+            maurox-store
+          </text>
+          <text class="small-text" x="120" y="1105">
+            A redux-like state management library available on npm
+          </text>
+          <text class="link-text" x="120" y="1125">
+            🔗 npmjs.com/~mauricio776101
+          </text>
+        </g>
+
+        <!-- Contact -->
+        <g class="section contact-section">
+          <text class="subtitle-text" x="100" y="1170">📫 Let's Connect</text>
+          <text class="body-text" x="100" y="1195">
+            💬 Ask me about: JavaScript · ReactJS · Redux · NodeJS · PostgreSQL
+            · Sequelize
+          </text>
+        </g>
+
+        <!-- Footer -->
+        <g class="section contact-section">
+          <line
+            x1="100"
+            y1="1220"
+            x2="700"
+            y2="1220"
+            stroke="#06b5d4"
+            stroke-width="1"
+            opacity="0.3"
+          />
+          <text class="small-text" x="400" y="1245" text-anchor="middle">
+            ⚡ From HX-mluquez
+          </text>
+          <text class="small-text" x="400" y="1270" text-anchor="middle">
+            Made with ❤️ and lots of ☕
+          </text>
+        </g>
       </g>
     </svg>
 

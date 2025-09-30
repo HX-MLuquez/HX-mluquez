@@ -279,23 +279,23 @@
           x="0"
           y="60"
           width="15"
-          height="40"
-          style="animation-delay: 0s"
+          height="20"
+          style="animation-delay: 0.2s"
         />
         <rect
           class="data-bar"
           x="20"
           y="40"
           width="15"
-          height="60"
-          style="animation-delay: 0.2s"
+          height="40"
+          style="animation-delay: 0.6s"
         />
         <rect
           class="data-bar"
           x="40"
           y="60"
           width="15"
-          height="80"
+          height="60"
           style="animation-delay: 0.4s"
         />
         <rect
@@ -304,15 +304,15 @@
           y="50"
           width="15"
           height="50"
-          style="animation-delay: 0.6s"
+          style="animation-delay: 0.8s"
         />
         <rect
           class="data-bar"
           x="80"
-          y="30"
+          y="70"
           width="15"
-          height="70"
-          style="animation-delay: 0.8s"
+          height="50"
+          style="animation-delay: 0.10s"
         />
       </g>
 

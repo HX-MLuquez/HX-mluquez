@@ -355,6 +355,7 @@
 
         <text x="80" y="280" style="animation-delay: 2.5s">SQL: SELECT *</text>
         <text x="80" y="300" style="animation-delay: 3s">FROM knowledge</text>
+        <text x="80" y="330" style="animation-delay: 3.5s">NoSQL: flexible schema </text>
       </g>
 
       <!-- Efecto de partículas -->
@@ -492,24 +493,24 @@
       </g>
 
       <!-- Texto principal combinado -->
-      <text class="main-text" x="360" y="120">Mauricio G. LUQUEZ</text>
-      <text class="sub-text" x="460" y="160">
+      <text class="main-text" x="440" y="380">Mauricio G. LUQUEZ</text>
+      <text class="sub-text" x="450" y="420">
         Full Stack Developer · Instructor
       </text>
 
       <!-- Línea divisoria animada -->
       <line
-        x1="275"
-        y1="195"
-        x2="525"
-        y2="195"
+        x1="290"
+        y1="460"
+        x2="925"
+        y2="460"
         stroke="#06b6d4"
         stroke-width="1"
         opacity="0.5"
       >
         <animate
           attributeName="x2"
-          values="275;525;275"
+          values="290;670;290"
           dur="12s"
           repeatCount="indefinite"
         />

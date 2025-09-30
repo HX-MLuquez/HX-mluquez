@@ -352,6 +352,19 @@
             </g>
           </g>
         </g>
+        <!-- Intro -->
+        <g class="section about-section">
+          <text class="subtitle-text" x="100" y="240">
+            👋 Welcome to my profile!
+          </text>
+          <text class="body-text" x="100" y="270">
+            You have finally discovered my Github profile.
+          </text>
+          <text class="body-text" x="100" y="295">
+            Please feel free to clone projects and raise issues if you think
+            something could be better.
+          </text>
+        </g>
 
       </g>
     </svg>

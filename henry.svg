@@ -1,39 +1,179 @@
- <svg
+  <svg
       version="1.1"
       baseProfile="full"
       width="800"
       height="1200"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <defs>
-        <!-- Gradientes -->
-        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color: #0c1221; stop-opacity: 1" />
-          <stop offset="50%" style="stop-color: #1b2430; stop-opacity: 1" />
-          <stop offset="100%" style="stop-color: #0e131a; stop-opacity: 1" />
-        </linearGradient>
+      
 
-        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color: #06b5d4; stop-opacity: 1" />
-          <stop offset="50%" style="stop-color: #0891b2; stop-opacity: 1" />
-          <stop offset="100%" style="stop-color: #0e7490; stop-opacity: 1" />
-        </linearGradient>
+      <style>
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
 
-        <radialGradient id="loaderGradient" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" style="stop-color: #06b5d4; stop-opacity: 0.8" />
-          <stop offset="100%" style="stop-color: #0891b2; stop-opacity: 0.2" />
-        </radialGradient>
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
 
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
+        @keyframes slideUp {
+          from {
+            transform: translateY(30px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
 
-   
+        @keyframes rotate {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+        @keyframes rotateReverse {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 0.6;
+          }
+          50% {
+            transform: scale(1.1);
+            opacity: 1;
+          }
+        }
+
+        @keyframes loaderExpand {
+          0% {
+            r: 60;
+            opacity: 1;
+          }
+          100% {
+            r: 400;
+            opacity: 0;
+          }
+        }
+
+        .loader-container {
+          animation: fadeOut 0.5s ease-out 3s forwards;
+          pointer-events: none;
+        }
+
+        .loader-circle {
+          animation: loaderExpand 3s ease-out forwards;
+        }
+
+        .loader-polygon-1 {
+          transform-origin: 400px 250px;
+          animation: rotate 2s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-polygon-2 {
+          transform-origin: 400px 250px;
+          animation: rotateReverse 3s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-polygon-3 {
+          transform-origin: 400px 250px;
+          animation: rotate 4s linear infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .loader-particle {
+          animation: pulse 2s ease-in-out infinite,
+            fadeOut 0.5s ease-out 3s forwards;
+        }
+
+        .main-content {
+          opacity: 0;
+          animation: fadeIn 1s ease-in 3.2s forwards;
+        }
+
+        .section {
+          animation: slideUp 0.8s ease-out forwards;
+          opacity: 0;
+        }
+
+        .header-section {
+          animation-delay: 3.5s;
+        }
+        .about-section {
+          animation-delay: 3.8s;
+        }
+        .tech-section {
+          animation-delay: 4.1s;
+        }
+        .skills-section {
+          animation-delay: 4.4s;
+        }
+        .contact-section {
+          animation-delay: 4.7s;
+        }
+
+        .star {
+          fill: rgba(6, 182, 212, 0.6);
+          animation: pulse 4s ease-in-out infinite;
+        }
+
+        .tech-badge {
+          transition: all 0.3s ease;
+        }
+
+        .link-text {
+          fill: #06b5d4;
+          font: 14px "Arial", sans-serif;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .title-text {
+          font: bold 32px "Arial", sans-serif;
+          fill: url(#textGradient);
+          filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+        }
+
+        .subtitle-text {
+          font: bold 20px "Arial", sans-serif;
+          fill: #06b5d4;
+        }
+
+        .body-text {
+          font: 16px "Arial", sans-serif;
+          fill: #94a3b8;
+          line-height: 1.6;
+        }
+
+        .small-text {
+          font: 14px "Arial", sans-serif;
+          fill: #64748b;
+        }
+      </style>
 
       <!-- Fondo -->
       <rect width="100%" height="100%" fill="url(#bgGradient)" />
@@ -207,29 +347,29 @@
 
         <!-- About -->
         <g class="section about-section">
-          <text class="subtitle-text" x="100" y="450">💼 About Me</text>
-          <text class="body-text" x="100" y="480">
+          <text class="subtitle-text" x="100" y="345">💼 About Me</text>
+          <text class="body-text" x="100" y="375">
             I'm a software developer passionate about creating technology to
             elevate people and help
           </text>
-          <text class="body-text" x="100" y="505">
+          <text class="body-text" x="100" y="400">
             new developers find the right path. Currently working as a Developer
             Instructor at
           </text>
-          <text class="body-text" x="100" y="530" fill="#06b5d4">
-            Bootcamp CoderHouse
+          <text class="body-text" x="100" y="425" fill="#06b5d4">
+            Bootcamp CoderHouse.
           </text>
-          <text class="body-text" x="232" y="530">
-            in Mendoza, Argentina. I'm committed to programming
+          <text class="body-text" x="280" y="425">
+            I'm committed to programming
           </text>
-          <text class="body-text" x="100" y="555">
+          <text class="body-text" x="100" y="450">
             excellence and have created complex solutions, including a
             redux-like library called
           </text>
-          <text class="body-text" x="100" y="580" fill="#06b5d4">
+          <text class="body-text" x="100" y="475" fill="#06b5d4">
             "maurox-store"
           </text>
-          <text class="body-text" x="208" y="580">available on npm.</text>
+          <text class="body-text" x="208" y="475">available on npm.</text>
         </g>
 
         <!-- Tech Stack -->
@@ -335,6 +475,7 @@
               PostgreSQL
             </text>
           </g>
+
 
           <!-- Intermediate -->
           <text class="small-text" x="100" y="710">Intermediate Level:</text>

@@ -1,9 +1,9 @@
-<table align="center">
-  <tr>
-    <td style="height: 300px !important; width: 800px !important; overflow: hidden; padding: 0;">
+<table align="center" style="border: none; margin: 0 auto;">
+  <tr style="border: none;">
+    <td style="height: 300px !important; width: 800px !important; overflow: hidden !important; padding: 0 !important; border: none !important; line-height: 0;">
       <img
         src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-        style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"
+        style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px; display: block;"
       />
     </td>
   </tr>

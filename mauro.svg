@@ -379,11 +379,11 @@
         </g>
         <!-- Tech Stack -->
         <g class="section tech-section">
-          <text class="subtitle-text" x="100" y="560">Tech Stack</text>
+          <text class="subtitle-text" x="100" y="530">Tech Stack</text>
 
           <!-- Primary Technologies -->
-          <text class="small-text" x="100" y="590">Expert Level:</text>
-          <g transform="translate(100, 600)">
+          <text class="small-text" x="100" y="560">Expert Level:</text>
+          <g transform="translate(100, 580)">
             <rect
               class="tech-badge"
               x="0"
@@ -482,8 +482,8 @@
           </g>
 
           <!-- Intermediate -->
-          <text class="small-text" x="100" y="710">Intermediate Level:</text>
-          <g transform="translate(100, 720)">
+          <text class="small-text" x="100" y="650">Intermediate Level:</text>
+          <g transform="translate(100, 670)">
             <rect
               class="tech-badge"
               x="0"
@@ -550,8 +550,8 @@
           </g>
 
           <!-- Basic -->
-          <text class="small-text" x="100" y="790">Basic Knowledge:</text>
-          <g transform="translate(100, 800)">
+          <text class="small-text" x="100" y="730">Basic Knowledge:</text>
+          <g transform="translate(100, 750)">
             <rect
               class="tech-badge"
               x="0"

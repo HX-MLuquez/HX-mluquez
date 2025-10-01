@@ -1,6 +1,6 @@
 <table align="center">
   <tr>
-    <td style="height: 300px; width: 800px; overflow: hidden; padding: 0;">
+    <td style="height: 300px; width: 800px; overflow: hidden; padding: 0 !important;">
       <img
         src="https://github.com/user-attachments/assets/1714285c-2caa-4f78-be3b-7f69aded3d97"
         style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"

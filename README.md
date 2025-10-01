@@ -2,7 +2,7 @@
 <div align="center">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    width="1200"  
+    width="750"  
     style="margin-top: -150px; clip-path: inset(150px 0 150px 0);"
   />
 </div>

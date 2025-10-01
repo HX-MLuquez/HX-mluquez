@@ -2,7 +2,7 @@
 <div align="center" style="width: 750px; height: 100px; overflow: hidden;">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    style="width: 100%; object-fit: cover;"
+    style="width: 750px; object-fit: cover;"
   />
 </div>
 

@@ -1,7 +1,7 @@
-<div align="center" style="height: 400px; width: 800px; margin: 0 auto; overflow: hidden; position: relative;">
+<div align="center" style="height: 300px; overflow: hidden; margin: 0 auto;">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    style="width: 120%; margin-top: -100px; margin-left: -10%;"
+    style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"
   />
 </div>
 

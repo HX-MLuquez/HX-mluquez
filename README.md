@@ -1,11 +1,11 @@
-
-<p align="center" width="50" style="margin-top: -500px;" >
+<p align="center">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    width="750"  
-   style="margin-top: -500px;"
+    width="1200"
+    style="margin-top: -500px;"
   />
 </p>
+
 
 <h3 align="center">Welcome to my GitHub space!</h3>
 <div align="center">

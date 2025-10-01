@@ -339,17 +339,16 @@
         <!-- Intro -->
         <g class="section about-section">
           <text class="subtitle-text" x="100" y="200">
-            Welcome to my profile!
+            Hello and welcome!
           </text>
           <text class="body-text" x="100" y="230">
-            Please feel free to clone projects and raise issues if you think something could be better.
+            Feel free to explore, clone any project, and open issues if you spot something that could be improved
           </text>
           <text class="body-text" x="100" y="255">
-            You have finally discovered my Github profile.
+            You've just landed on my GitHub profile—glad you're here!
           </text>
           <text class="body-text" x="100" y="280">
-            Please feel free to clone projects and raise issues if you think
-            something could be better.
+            Dive into the code, suggest enhancements, or simply enjoy the journey through my projects
           </text>
         </g>
          <!-- About -->

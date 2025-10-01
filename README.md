@@ -4,11 +4,7 @@
         style="width: 750px !important;"
       />
 </div>
-
-
-
-
-<h3 align="center">Welcome to my GitHub space!</h3>
+<-- <h3 align="center">Welcome to my GitHub space!</h3> -->
 <div align="center">
 
   ![](./mauro.svg)

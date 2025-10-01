@@ -1,5 +1,5 @@
 
-<div align="center">
+<div align="center" width="50"  >
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
     width="750"  

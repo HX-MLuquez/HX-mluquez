@@ -2,11 +2,11 @@
 <div align="center">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    style="width: 450px;"
+    style="width: 650px;"
   />
 </div>
 
-### Welcome to my GitHub space!
+<h3 align="center">Welcome to my GitHub space!</h3>
 <div align="center">
 
   ![](./mauro.svg)

@@ -1,8 +1,9 @@
 
-<div align="center" style="width: 750px; height: 100px; overflow: hidden;">
+<div align="center">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    style="width: 750px; object-fit: cover;"
+    width="1200"  
+    style="margin-top: -150px; clip-path: inset(150px 0 150px 0);"
   />
 </div>
 

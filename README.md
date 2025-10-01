@@ -1,9 +1,13 @@
-<div align="center" style="height: 300px; overflow: hidden; margin: 0 auto;">
-  <img
-    src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"
-  />
-</div>
+<table align="center">
+  <tr>
+    <td style="height: 300px; width: 800px; overflow: hidden; padding: 0;">
+      <img
+        src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
+        style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"
+      />
+    </td>
+  </tr>
+</table>
 
 
 <h3 align="center">Welcome to my GitHub space!</h3>

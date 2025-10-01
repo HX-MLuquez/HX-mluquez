@@ -1,10 +1,9 @@
-<p align="center">
+<div align="center" style="height: 400px; width: 800px; margin: 0 auto; overflow: hidden; position: relative;">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    width="700"
-    style="margin-top: -500px;"
+    style="width: 120%; margin-top: -100px; margin-left: -10%;"
   />
-</p>
+</div>
 
 
 <h3 align="center">Welcome to my GitHub space!</h3>

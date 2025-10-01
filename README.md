@@ -1,7 +1,7 @@
 <p align="center">
   <img
     src="https://static.wikia.nocookie.net/matrix/images/f/f8/Room_101_Computers.png/revision/latest?cb=20130301014821"
-    width="1200"
+    width="200"
     style="margin-top: -500px;"
   />
 </p>

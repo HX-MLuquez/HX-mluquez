@@ -1,6 +1,13 @@
-<div style="height: 300px !important; width: 800px !important; overflow: hidden !important; padding: 0 !important; border: none !important; line-height: 0;">
-  <img width="853" height="268" alt="Image" src="https://github.com/user-attachments/assets/1714285c-2caa-4f78-be3b-7f69aded3d97" style="width: 750px !important; max-width: none !important; margin-top: -150px; margin-left: -200px; display: block;"/>
-</div>
+<table align="center">
+  <tr>
+    <td style="height: 300px; width: 800px; overflow: hidden; padding: 0;">
+      <img
+        src="https://github.com/user-attachments/assets/1714285c-2caa-4f78-be3b-7f69aded3d97"
+        style="width: 1200px !important; max-width: none !important; margin-top: -150px; margin-left: -200px;"
+      />
+    </td>
+  </tr>
+</table>
 
 
 

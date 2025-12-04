@@ -484,6 +484,7 @@
           <!-- Intermediate -->
           <text class="small-text" x="100" y="650">Intermediate Level:</text>
           <g transform="translate(100, 670)">
+            <!-- Python -->
             <rect
               class="tech-badge"
               x="0"
@@ -499,7 +500,8 @@
             <text x="40" y="21" text-anchor="middle" class="body-text">
               Python
             </text>
-
+          
+            <!-- Django -->
             <rect
               class="tech-badge"
               x="90"
@@ -515,10 +517,45 @@
             <text x="130" y="21" text-anchor="middle" class="body-text">
               Django
             </text>
-
+          
+            <!-- Java -->
             <rect
               class="tech-badge"
               x="180"
+              y="0"
+              width="80"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="220" y="21" text-anchor="middle" class="body-text">
+              Java
+            </text>
+          
+            <!-- Spring Boot -->
+            <rect
+              class="tech-badge"
+              x="270"
+              y="0"
+              width="110"
+              height="32"
+              rx="16"
+              fill="#1e293b"
+              opacity="0.8"
+              stroke="#475569"
+              stroke-width="1"
+            />
+            <text x="325" y="21" text-anchor="middle" class="body-text">
+              Spring Boot
+            </text>
+          
+            <!-- MongoDB -->
+            <rect
+              class="tech-badge"
+              x="390"
               y="0"
               width="100"
               height="32"
@@ -528,13 +565,14 @@
               stroke="#475569"
               stroke-width="1"
             />
-            <text x="230" y="21" text-anchor="middle" class="body-text">
+            <text x="440" y="21" text-anchor="middle" class="body-text">
               MongoDB
             </text>
-
+          
+            <!-- PHP -->
             <rect
               class="tech-badge"
-              x="290"
+              x="500"
               y="0"
               width="70"
               height="32"
@@ -544,11 +582,10 @@
               stroke="#475569"
               stroke-width="1"
             />
-            <text x="325" y="21" text-anchor="middle" class="body-text">
+            <text x="535" y="21" text-anchor="middle" class="body-text">
               PHP
             </text>
           </g>
-
           <!-- Basic -->
           <text class="small-text" x="100" y="730">Basic Knowledge:</text>
           <g transform="translate(100, 750)">

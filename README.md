@@ -6,7 +6,7 @@
 </div>
 <div align="center">
    
-  ![](https://cdn.jsdelivr.net/gh/HX-MLuquez/HX-mluquez@main/mauro.svg)
+  ![](https://cdn.jsdelivr.net/gh/HX-MLuquez/HX-mluquez@main/mauro.svg?v=2)
 
 ⚡ Please feel free to clone projects and raise issues [if you think something could be better.](https://github.com/HX-mluquez)
 
